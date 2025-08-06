@@ -1,12 +1,12 @@
 apiVersion: scaffolder.backstage.io/v1beta3
 kind: Template
 metadata:
-  name: criar-componente-ti
-  title: Criar Componente de TI
-  description: Template para criação de componentes com governança padronizada
+  name: novo-microservico
+  title: Criar Componente Microserviço
+  description: Template para criação de componentes do tipo Microserviço com governança padronizada
 spec:
   parameters:
-    - title: Nome do Componente
+    - title: Nome do Serviço
       description: Nome único do componente
       type: string
       required: true
