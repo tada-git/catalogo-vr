@@ -1,0 +1,12 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: {{ parameters.nome }}
+  description: {{ parameters.descricao }}
+  tags:
+    - {{ parameters.dominio }}
+spec:
+  type: {{ parameters.tipo }}
+  lifecycle: {{ parameters.ciclo }}
+  owner: {{ parameters.owner }}
+  system: {{ parameters.sistema }}
