@@ -7,7 +7,7 @@ metadata:
   tags:
   - dominio
 spec:
-  owner: group:default/ecossistema-vr/governanca-vr
+  owner: group:default/governanca-vr
 ---
 apiVersion: backstage.io/v1alpha1
 kind: Domain
@@ -18,7 +18,7 @@ metadata:
   tags:
   - dominio
 spec:
-  owner: group:default/ecossistema-vr/governanca-vr
+  owner: group:default/governanca-vr
 ---
 apiVersion: backstage.io/v1alpha1
 kind: Domain
@@ -29,7 +29,7 @@ metadata:
   tags:
   - dominio
 spec:
-  owner: group:default/ecossistema-vr/governanca-vr
+  owner: group:default/governanca-vr
 ---
 apiVersion: backstage.io/v1alpha1
 kind: Domain
@@ -40,7 +40,7 @@ metadata:
   tags:
   - comum:subdominios
 spec:
-  owner: group:default/ecossistema-vr/governanca-vr
+  owner: group:default/governanca-vr
   parent: domain:comum
 ---
 apiVersion: backstage.io/v1alpha1
@@ -52,7 +52,7 @@ metadata:
   tags:
   - comum:subdominios
 spec:
-  owner: group:default/ecossistema-vr/governanca-vr
+  owner: group:default/governanca-vr
   parent: domain:comum
 ---
 apiVersion: backstage.io/v1alpha1
@@ -64,7 +64,7 @@ metadata:
   tags:
   - comum:subdominios
 spec:
-  owner: group:default/ecossistema-vr/governanca-vr
+  owner: group:default/governanca-vr
   parent: domain:comum
 ---
 apiVersion: backstage.io/v1alpha1
@@ -76,7 +76,7 @@ metadata:
   tags:
   - comum:subdominios
 spec:
-  owner: group:default/ecossistema-vr/governanca-vr
+  owner: group:default/governanca-vr
   parent: domain:comum
 ---
 apiVersion: backstage.io/v1alpha1
@@ -88,7 +88,7 @@ metadata:
   tags:
   - comum:subdominios
 spec:
-  owner: group:default/ecossistema-vr/governanca-vr
+  owner: group:default/governanca-vr
   parent: domain:comum
 ---
 apiVersion: backstage.io/v1alpha1
@@ -100,7 +100,7 @@ metadata:
   tags:
   - emissor:subdominios
 spec:
-  owner: group:default/ecossistema-vr/governanca-vr
+  owner: group:default/governanca-vr
   parent: domain:emissor
 ---
 apiVersion: backstage.io/v1alpha1
@@ -112,7 +112,7 @@ metadata:
   tags:
   - emissor:subdominios
 spec:
-  owner: group:default/ecossistema-vr/governanca-vr
+  owner: group:default/governanca-vr
   parent: domain:emissor
 ---
 apiVersion: backstage.io/v1alpha1
@@ -124,7 +124,7 @@ metadata:
   tags:
   - emissor:subdominios
 spec:
-  owner: group:default/ecossistema-vr/governanca-vr
+  owner: group:default/governanca-vr
   parent: domain:emissor
 ---
 apiVersion: backstage.io/v1alpha1
@@ -136,7 +136,7 @@ metadata:
   tags:
   - emissor:subdominios
 spec:
-  owner: group:default/ecossistema-vr/governanca-vr
+  owner: group:default/governanca-vr
   parent: domain:emissor
 ---
 apiVersion: backstage.io/v1alpha1
@@ -148,7 +148,7 @@ metadata:
   tags:
   - adquirente:subdominios
 spec:
-  owner: group:default/ecossistema-vr/governanca-vr
+  owner: group:default/governanca-vr
   parent: domain:adquirente
 ---
 apiVersion: backstage.io/v1alpha1
@@ -160,7 +160,7 @@ metadata:
   tags:
   - adquirente:subdominios
 spec:
-  owner: group:default/ecossistema-vr/governanca-vr
+  owner: group:default/governanca-vr
   parent: domain:adquirente
 ---
 apiVersion: backstage.io/v1alpha1
@@ -172,7 +172,7 @@ metadata:
   tags:
   - adquirente:subdominios
 spec:
-  owner: group:default/ecossistema-vr/governanca-vr
+  owner: group:default/governanca-vr
   parent: domain:adquirente
 ---
 apiVersion: backstage.io/v1alpha1
@@ -184,5 +184,5 @@ metadata:
   tags:
   - adquirente:subdominios
 spec:
-  owner: group:default/ecossistema-vr/governanca-vr
+  owner: group:default/governanca-vr
   parent: domain:adquirente
