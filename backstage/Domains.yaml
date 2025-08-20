@@ -38,6 +38,7 @@ metadata:
   title: Comunicação
   description: Subdomínio - Eventstorming
   tags:
+  - dominio:comum
   - subdominio
 spec:
   owner: group:default/governanca
@@ -50,6 +51,7 @@ metadata:
   title: Soluções Financeiras
   description: Subdomínio - Eventstorming
   tags:
+  - dominio:comum
   - subdominio
 spec:
   owner: group:default/governanca
@@ -62,6 +64,7 @@ metadata:
   title: Segurança
   description: Subdomínio - Eventstorming
   tags:
+  - dominio:comum
   - subdominio
 spec:
   owner: group:default/governanca
@@ -74,6 +77,7 @@ metadata:
   title: Renumeração de Canais
   description: Subdomínio - Eventstorming
   tags:
+  - dominio:comum
   - subdominio
 spec:
   owner: group:default/governanca
@@ -86,6 +90,7 @@ metadata:
   title: Dados Básicos
   description: Subdomínio - Eventstorming
   tags:
+  - dominio:comum
   - subdominio
 spec:
   owner: group:default/governanca
@@ -98,6 +103,7 @@ metadata:
   title: Venda RH
   description: Subdomínio - Eventstorming
   tags:
+  - dominio:emissor
   - subdominio
 spec:
   owner: group:default/governanca
@@ -110,6 +116,7 @@ metadata:
   title: Operação RH
   description: Subdomínio - Eventstorming
   tags:
+  - dominio:emissor
   - subdominio
 spec:
   owner: group:default/governanca
@@ -122,6 +129,7 @@ metadata:
   title: Cliente RH
   description: Subdomínio - Eventstorming
   tags:
+  - dominio:emissor
   - subdominio
 spec:
   owner: group:default/governanca
@@ -134,6 +142,7 @@ metadata:
   title: Logística Cartões
   description: Subdomínio - Eventstorming
   tags:
+  - dominio:emissor
   - subdominio
 spec:
   owner: group:default/governanca
@@ -146,6 +155,7 @@ metadata:
   title: Venda EC
   description: Subdomínio - Eventstorming
   tags:
+  - dominio:adquirente
   - subdominio
 spec:
   owner: group:default/governanca
@@ -158,6 +168,7 @@ metadata:
   title: Cliente EC
   description: Subdomínio - Eventstorming
   tags:
+  - dominio:adquirente
   - subdominio
 spec:
   owner: group:default/governanca
@@ -170,6 +181,7 @@ metadata:
   title: Serviços EC
   description: Subdomínio - Eventstorming
   tags:
+  - dominio:adquirente
   - subdominio
 spec:
   owner: group:default/governanca
@@ -182,6 +194,7 @@ metadata:
   title: Operação do EC
   description: Subdomínio - Eventstorming
   tags:
+  - dominio:adquirente
   - subdominio
 spec:
   owner: group:default/governanca
