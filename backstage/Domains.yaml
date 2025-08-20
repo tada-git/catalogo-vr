@@ -1,0 +1,188 @@
+apiVersion: backstage.io/v1alpha1
+kind: Domain
+metadata:
+  name: comum
+  title: Comum
+  description: Domínio Base - Eventstorming
+  tags:
+    - tipo: domain
+spec:
+  owner: group:default/governanca
+---
+apiVersion: backstage.io/v1alpha1
+kind: Domain
+metadata:
+  name: emissor
+  title: Emissor
+  description: Domínio Base - Eventstorming
+  tags:
+    - tipo: domain
+spec:
+  owner: group:default/governanca
+---
+apiVersion: backstage.io/v1alpha1
+kind: Domain
+metadata:
+  name: adquirente
+  title: Adquirente
+  description: Domínio Base - Eventstorming
+  tags:
+    - tipo: domain
+spec:
+  owner: group:default/governanca
+---
+apiVersion: backstage.io/v1alpha1
+kind: Domain
+metadata:
+  name: comunicacao
+  title: Comunicação
+  description: Subdomínio - Eventstorming
+  tags:
+    - tipo: domain
+spec:
+  owner: group:default/governanca
+  parent: domain:comum
+---
+apiVersion: backstage.io/v1alpha1
+kind: Domain
+metadata:
+  name: solucoes-financeiras
+  title: Soluções Financeiras
+  description: Subdomínio - Eventstorming
+  tags:
+    - tipo: domain
+spec:
+  owner: group:default/governanca
+  parent: domain:comum
+---
+apiVersion: backstage.io/v1alpha1
+kind: Domain
+metadata:
+  name: seguranca
+  title: Segurança
+  description: Subdomínio - Eventstorming
+  tags:
+    - tipo: domain
+spec:
+  owner: group:default/governanca
+  parent: domain:comum
+---
+apiVersion: backstage.io/v1alpha1
+kind: Domain
+metadata:
+  name: renumeracao-canais
+  title: Renumeração de Canais
+  description: Subdomínio - Eventstorming
+  tags:
+    - tipo: domain
+spec:
+  owner: group:default/governanca
+  parent: domain:comum
+---
+apiVersion: backstage.io/v1alpha1
+kind: Domain
+metadata:
+  name: dados-basicos
+  title: Dados Básicos
+  description: Subdomínio - Eventstorming
+  tags:
+    - tipo: domain
+spec:
+  owner: group:default/governanca
+  parent: domain:comum
+---
+apiVersion: backstage.io/v1alpha1
+kind: Domain
+metadata:
+  name: venda-rh
+  title: Venda RH
+  description: Subdomínio - Eventstorming
+  tags:
+    - tipo: domain
+spec:
+  owner: group:default/governanca
+  parent: domain:emissor
+---
+apiVersion: backstage.io/v1alpha1
+kind: Domain
+metadata:
+  name: operacao-rh
+  title: Operação RH
+  description: Subdomínio - Eventstorming
+  tags:
+    - tipo: domain
+spec:
+  owner: group:default/governanca
+  parent: domain:emissor
+---
+apiVersion: backstage.io/v1alpha1
+kind: Domain
+metadata:
+  name: cliente-rh
+  title: Cliente RH
+  description: Subdomínio - Eventstorming
+  tags:
+    - tipo: domain
+spec:
+  owner: group:default/governanca
+  parent: domain:emissor
+---
+apiVersion: backstage.io/v1alpha1
+kind: Domain
+metadata:
+  name: logistica-cartoes
+  title: Logística Cartões
+  description: Subdomínio - Eventstorming
+  tags:
+    - tipo: domain
+spec:
+  owner: group:default/governanca
+  parent: domain:emissor
+---
+apiVersion: backstage.io/v1alpha1
+kind: Domain
+metadata:
+  name: venda-ec
+  title: Venda EC
+  description: Subdomínio - Eventstorming
+  tags:
+    - tipo: domain
+spec:
+  owner: group:default/governanca
+  parent: domain:adquirente
+---
+apiVersion: backstage.io/v1alpha1
+kind: Domain
+metadata:
+  name: cliente-ec
+  title: Cliente EC
+  description: Subdomínio - Eventstorming
+  tags:
+    - tipo: domain
+spec:
+  owner: group:default/governanca
+  parent: domain:adquirente
+---
+apiVersion: backstage.io/v1alpha1
+kind: Domain
+metadata:
+  name: servicos-ec
+  title: Serviços EC
+  description: Subdomínio - Eventstorming
+  tags:
+    - tipo: domain
+spec:
+  owner: group:default/governanca
+  parent: domain:adquirente
+---
+apiVersion: backstage.io/v1alpha1
+kind: Domain
+metadata:
+  name: operacao-ec
+  title: Operação do EC
+  description: Subdomínio - Eventstorming
+  tags:
+    - tipo: domain
+spec:
+  owner: group:default/governanca
+  parent: domain:adquirente
