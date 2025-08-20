@@ -1,0 +1,90 @@
+apiVersion: backstage.io/v1alpha1
+kind: Group
+metadata:
+  description: Grupo raiz do ecossistema VR
+  name: ecossistema-vr
+  title: Ecossistema VR
+spec:
+  children:
+  - vr-beneficios
+  - vr-mobilidade
+  - vr-shopping
+  - vr-gente
+  - governanca-vr
+  type: organization
+---
+apiVersion: backstage.io/v1alpha1
+kind: Group
+metadata:
+  name: vr-beneficios
+  title: VR Benefícios
+spec:
+  children:
+  - bandeira
+  - componentes-corporativos
+  - exp-digital-rh
+  parent: ecossistema-vr
+  type: organization
+---
+apiVersion: backstage.io/v1alpha1
+kind: Group
+metadata:
+  name: bandeira
+  title: Bandeira
+spec:
+  parent: vr-beneficios
+  type: team
+---
+apiVersion: backstage.io/v1alpha1
+kind: Group
+metadata:
+  name: componentes-corporativos
+  title: Componentes Corporativos
+spec:
+  parent: vr-beneficios
+  type: team
+---
+apiVersion: backstage.io/v1alpha1
+kind: Group
+metadata:
+  name: exp-digital-rh
+  title: Exp. Digital RH
+spec:
+  parent: vr-beneficios
+  type: team
+---
+apiVersion: backstage.io/v1alpha1
+kind: Group
+metadata:
+  name: vr-mobilidade
+  title: VR Mobilidade
+spec:
+  parent: ecossistema-vr
+  type: organization
+---
+apiVersion: backstage.io/v1alpha1
+kind: Group
+metadata:
+  name: vr-shopping
+  title: VR Shopping
+spec:
+  parent: ecossistema-vr
+  type: organization
+---
+apiVersion: backstage.io/v1alpha1
+kind: Group
+metadata:
+  name: vr-gente
+  title: VR Gente
+spec:
+  parent: ecossistema-vr
+  type: organization
+---
+apiVersion: backstage.io/v1alpha1
+kind: Group
+metadata:
+  name: governanca-vr
+  title: Governança VR
+spec:
+  parent: ecossistema-vr
+  type: team
