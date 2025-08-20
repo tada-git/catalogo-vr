@@ -5,7 +5,7 @@ metadata:
   title: Comum
   description: Domínio Base - Eventstorming
   tags:
-  - dominio
+  - dominios
 spec:
   owner: group:default/governanca-vr
 ---
@@ -16,7 +16,7 @@ metadata:
   title: Emissor
   description: Domínio Base - Eventstorming
   tags:
-  - dominio
+  - dominios
 spec:
   owner: group:default/governanca-vr
 ---
@@ -27,7 +27,7 @@ metadata:
   title: Adquirente
   description: Domínio Base - Eventstorming
   tags:
-  - dominio
+  - dominios
 spec:
   owner: group:default/governanca-vr
 ---
