@@ -41,7 +41,7 @@ metadata:
   - comum:subdominios
 spec:
   owner: group:default/governanca-vr
-  parent: domain:comum
+  parent: comum
 ---
 apiVersion: backstage.io/v1alpha1
 kind: Domain
@@ -53,7 +53,7 @@ metadata:
   - comum:subdominios
 spec:
   owner: group:default/governanca-vr
-  parent: domain:comum
+  parent: comum
 ---
 apiVersion: backstage.io/v1alpha1
 kind: Domain
@@ -65,7 +65,7 @@ metadata:
   - comum:subdominios
 spec:
   owner: group:default/governanca-vr
-  parent: domain:comum
+  parent: comum
 ---
 apiVersion: backstage.io/v1alpha1
 kind: Domain
@@ -77,7 +77,7 @@ metadata:
   - comum:subdominios
 spec:
   owner: group:default/governanca-vr
-  parent: domain:comum
+  parent: comum
 ---
 apiVersion: backstage.io/v1alpha1
 kind: Domain
@@ -89,7 +89,7 @@ metadata:
   - comum:subdominios
 spec:
   owner: group:default/governanca-vr
-  parent: domain:comum
+  parent: comum
 ---
 apiVersion: backstage.io/v1alpha1
 kind: Domain
@@ -101,7 +101,7 @@ metadata:
   - emissor:subdominios
 spec:
   owner: group:default/governanca-vr
-  parent: domain:emissor
+  parent: emissor
 ---
 apiVersion: backstage.io/v1alpha1
 kind: Domain
@@ -113,7 +113,7 @@ metadata:
   - emissor:subdominios
 spec:
   owner: group:default/governanca-vr
-  parent: domain:emissor
+  parent: emissor
 ---
 apiVersion: backstage.io/v1alpha1
 kind: Domain
@@ -125,7 +125,7 @@ metadata:
   - emissor:subdominios
 spec:
   owner: group:default/governanca-vr
-  parent: domain:emissor
+  parent: emissor
 ---
 apiVersion: backstage.io/v1alpha1
 kind: Domain
@@ -137,7 +137,7 @@ metadata:
   - emissor:subdominios
 spec:
   owner: group:default/governanca-vr
-  parent: domain:emissor
+  parent: emissor
 ---
 apiVersion: backstage.io/v1alpha1
 kind: Domain
@@ -149,7 +149,7 @@ metadata:
   - adquirente:subdominios
 spec:
   owner: group:default/governanca-vr
-  parent: domain:adquirente
+  parent: adquirente
 ---
 apiVersion: backstage.io/v1alpha1
 kind: Domain
@@ -161,7 +161,7 @@ metadata:
   - adquirente:subdominios
 spec:
   owner: group:default/governanca-vr
-  parent: domain:adquirente
+  parent: adquirente
 ---
 apiVersion: backstage.io/v1alpha1
 kind: Domain
@@ -173,7 +173,7 @@ metadata:
   - adquirente:subdominios
 spec:
   owner: group:default/governanca-vr
-  parent: domain:adquirente
+  parent: adquirente
 ---
 apiVersion: backstage.io/v1alpha1
 kind: Domain
@@ -185,4 +185,4 @@ metadata:
   - adquirente:subdominios
 spec:
   owner: group:default/governanca-vr
-  parent: domain:adquirente
+  parent: adquirente
