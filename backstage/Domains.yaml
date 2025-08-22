@@ -7,25 +7,15 @@ metadata:
   - dominios
   title: Comum
 relations:
-- target:
-    kind: Domain
-    name: comunicacao
+- targetRef: domain:default/comunicacao
   type: parentOf
-- target:
-    kind: Domain
-    name: solucoes-financeiras
+- targetRef: domain:default/solucoes-financeiras
   type: parentOf
-- target:
-    kind: Domain
-    name: seguranca
+- targetRef: domain:default/seguranca
   type: parentOf
-- target:
-    kind: Domain
-    name: renumeracao-canais
+- targetRef: domain:default/renumeracao-canais
   type: parentOf
-- target:
-    kind: Domain
-    name: dados-basicos
+- targetRef: domain:default/dados-basicos
   type: parentOf
 spec:
   owner: group:default/governanca-vr
@@ -39,21 +29,13 @@ metadata:
   - dominios
   title: Emissor
 relations:
-- target:
-    kind: Domain
-    name: venda-rh
+- targetRef: domain:default/venda-rh
   type: parentOf
-- target:
-    kind: Domain
-    name: operacao-rh
+- targetRef: domain:default/operacao-rh
   type: parentOf
-- target:
-    kind: Domain
-    name: cliente-rh
+- targetRef: domain:default/cliente-rh
   type: parentOf
-- target:
-    kind: Domain
-    name: logistica-cartoes
+- targetRef: domain:default/logistica-cartoes
   type: parentOf
 spec:
   owner: group:default/governanca-vr
@@ -67,21 +49,13 @@ metadata:
   - dominios
   title: Adquirente
 relations:
-- target:
-    kind: Domain
-    name: venda-ec
+- targetRef: domain:default/venda-ec
   type: parentOf
-- target:
-    kind: Domain
-    name: cliente-ec
+- targetRef: domain:default/cliente-ec
   type: parentOf
-- target:
-    kind: Domain
-    name: servicos-ec
+- targetRef: domain:default/servicos-ec
   type: parentOf
-- target:
-    kind: Domain
-    name: operacao-ec
+- targetRef: domain:default/operacao-ec
   type: parentOf
 spec:
   owner: group:default/governanca-vr
@@ -95,9 +69,7 @@ metadata:
   - comum:subdominios
   title: Comunicação
 relations:
-- target:
-    kind: Domain
-    name: comum
+- targetRef: domain:default/comum
   type: childOf
 spec:
   owner: group:default/governanca-vr
@@ -114,9 +86,7 @@ metadata:
   - comum:subdominios
   title: Soluções Financeiras
 relations:
-- target:
-    kind: Domain
-    name: comum
+- targetRef: domain:default/comum
   type: childOf
 spec:
   owner: group:default/governanca-vr
@@ -133,9 +103,7 @@ metadata:
   - comum:subdominios
   title: Segurança
 relations:
-- target:
-    kind: Domain
-    name: comum
+- targetRef: domain:default/comum
   type: childOf
 spec:
   owner: group:default/governanca-vr
@@ -152,9 +120,7 @@ metadata:
   - comum:subdominios
   title: Renumeração de Canais
 relations:
-- target:
-    kind: Domain
-    name: comum
+- targetRef: domain:default/comum
   type: childOf
 spec:
   owner: group:default/governanca-vr
@@ -171,9 +137,7 @@ metadata:
   - comum:subdominios
   title: Dados Básicos
 relations:
-- target:
-    kind: Domain
-    name: comum
+- targetRef: domain:default/comum
   type: childOf
 spec:
   owner: group:default/governanca-vr
@@ -190,9 +154,7 @@ metadata:
   - emissor:subdominios
   title: Venda RH
 relations:
-- target:
-    kind: Domain
-    name: emissor
+- targetRef: domain:default/emissor
   type: childOf
 spec:
   owner: group:default/governanca-vr
@@ -209,9 +171,7 @@ metadata:
   - emissor:subdominios
   title: Operação RH
 relations:
-- target:
-    kind: Domain
-    name: emissor
+- targetRef: domain:default/emissor
   type: childOf
 spec:
   owner: group:default/governanca-vr
@@ -228,9 +188,7 @@ metadata:
   - emissor:subdominios
   title: Cliente RH
 relations:
-- target:
-    kind: Domain
-    name: emissor
+- targetRef: domain:default/emissor
   type: childOf
 spec:
   owner: group:default/governanca-vr
@@ -247,9 +205,7 @@ metadata:
   - emissor:subdominios
   title: Logística Cartões
 relations:
-- target:
-    kind: Domain
-    name: emissor
+- targetRef: domain:default/emissor
   type: childOf
 spec:
   owner: group:default/governanca-vr
@@ -266,9 +222,7 @@ metadata:
   - adquirente:subdominios
   title: Venda EC
 relations:
-- target:
-    kind: Domain
-    name: adquirente
+- targetRef: domain:default/adquirente
   type: childOf
 spec:
   owner: group:default/governanca-vr
@@ -285,9 +239,7 @@ metadata:
   - adquirente:subdominios
   title: Cliente EC
 relations:
-- target:
-    kind: Domain
-    name: adquirente
+- targetRef: domain:default/adquirente
   type: childOf
 spec:
   owner: group:default/governanca-vr
@@ -304,9 +256,7 @@ metadata:
   - adquirente:subdominios
   title: Serviços EC
 relations:
-- target:
-    kind: Domain
-    name: adquirente
+- targetRef: domain:default/adquirente
   type: childOf
 spec:
   owner: group:default/governanca-vr
@@ -323,9 +273,7 @@ metadata:
   - adquirente:subdominios
   title: Operação do EC
 relations:
-- target:
-    kind: Domain
-    name: adquirente
+- targetRef: domain:default/adquirente
   type: childOf
 spec:
   owner: group:default/governanca-vr
