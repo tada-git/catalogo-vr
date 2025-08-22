@@ -1,214 +1,334 @@
 apiVersion: backstage.io/v1alpha1
 kind: Domain
 metadata:
+  description: Domínio Base - Eventstorming
   name: comum
+  tags:
+  - dominios
   title: Comum
-  description: Domínio Base - Eventstorming
-  tags:
-  - dominios
+relations:
+- target:
+    kind: Domain
+    name: comunicacao
+  type: parentOf
+- target:
+    kind: Domain
+    name: solucoes-financeiras
+  type: parentOf
+- target:
+    kind: Domain
+    name: seguranca
+  type: parentOf
+- target:
+    kind: Domain
+    name: renumeracao-canais
+  type: parentOf
+- target:
+    kind: Domain
+    name: dados-basicos
+  type: parentOf
 spec:
   owner: group:default/governanca-vr
 ---
 apiVersion: backstage.io/v1alpha1
 kind: Domain
 metadata:
+  description: Domínio Base - Eventstorming
   name: emissor
+  tags:
+  - dominios
   title: Emissor
-  description: Domínio Base - Eventstorming
-  tags:
-  - dominios
+relations:
+- target:
+    kind: Domain
+    name: venda-rh
+  type: parentOf
+- target:
+    kind: Domain
+    name: operacao-rh
+  type: parentOf
+- target:
+    kind: Domain
+    name: cliente-rh
+  type: parentOf
+- target:
+    kind: Domain
+    name: logistica-cartoes
+  type: parentOf
 spec:
   owner: group:default/governanca-vr
 ---
 apiVersion: backstage.io/v1alpha1
 kind: Domain
 metadata:
+  description: Domínio Base - Eventstorming
   name: adquirente
-  title: Adquirente
-  description: Domínio Base - Eventstorming
   tags:
   - dominios
+  title: Adquirente
+relations:
+- target:
+    kind: Domain
+    name: venda-ec
+  type: parentOf
+- target:
+    kind: Domain
+    name: cliente-ec
+  type: parentOf
+- target:
+    kind: Domain
+    name: servicos-ec
+  type: parentOf
+- target:
+    kind: Domain
+    name: operacao-ec
+  type: parentOf
 spec:
   owner: group:default/governanca-vr
 ---
 apiVersion: backstage.io/v1alpha1
 kind: Domain
 metadata:
+  description: Subdomínio - Eventstorming
   name: comunicacao
+  tags:
+  - comum:subdominios
   title: Comunicação
-  description: Subdomínio - Eventstorming
-  tags:
-  - comum:subdominios
+relations:
+- target:
+    kind: Domain
+    name: comum
+  type: childOf
 spec:
   owner: group:default/governanca-vr
-  parent: 
+  parent:
     kind: Domain
     name: comum
 ---
 apiVersion: backstage.io/v1alpha1
 kind: Domain
 metadata:
+  description: Subdomínio - Eventstorming
   name: solucoes-financeiras
+  tags:
+  - comum:subdominios
   title: Soluções Financeiras
-  description: Subdomínio - Eventstorming
-  tags:
-  - comum:subdominios
+relations:
+- target:
+    kind: Domain
+    name: comum
+  type: childOf
 spec:
   owner: group:default/governanca-vr
-  parent: 
+  parent:
     kind: Domain
     name: comum
 ---
 apiVersion: backstage.io/v1alpha1
 kind: Domain
 metadata:
+  description: Subdomínio - Eventstorming
   name: seguranca
+  tags:
+  - comum:subdominios
   title: Segurança
-  description: Subdomínio - Eventstorming
-  tags:
-  - comum:subdominios
+relations:
+- target:
+    kind: Domain
+    name: comum
+  type: childOf
 spec:
   owner: group:default/governanca-vr
-  parent: 
+  parent:
     kind: Domain
     name: comum
 ---
 apiVersion: backstage.io/v1alpha1
 kind: Domain
 metadata:
+  description: Subdomínio - Eventstorming
   name: renumeracao-canais
+  tags:
+  - comum:subdominios
   title: Renumeração de Canais
-  description: Subdomínio - Eventstorming
-  tags:
-  - comum:subdominios
+relations:
+- target:
+    kind: Domain
+    name: comum
+  type: childOf
 spec:
   owner: group:default/governanca-vr
-  parent: 
+  parent:
     kind: Domain
     name: comum
 ---
 apiVersion: backstage.io/v1alpha1
 kind: Domain
 metadata:
+  description: Subdomínio - Eventstorming
   name: dados-basicos
-  title: Dados Básicos
-  description: Subdomínio - Eventstorming
   tags:
   - comum:subdominios
+  title: Dados Básicos
+relations:
+- target:
+    kind: Domain
+    name: comum
+  type: childOf
 spec:
   owner: group:default/governanca-vr
-  parent: 
+  parent:
     kind: Domain
     name: comum
 ---
 apiVersion: backstage.io/v1alpha1
 kind: Domain
 metadata:
+  description: Subdomínio - Eventstorming
   name: venda-rh
+  tags:
+  - emissor:subdominios
   title: Venda RH
-  description: Subdomínio - Eventstorming
-  tags:
-  - emissor:subdominios
+relations:
+- target:
+    kind: Domain
+    name: emissor
+  type: childOf
 spec:
   owner: group:default/governanca-vr
-  parent: 
+  parent:
     kind: Domain
     name: emissor
 ---
 apiVersion: backstage.io/v1alpha1
 kind: Domain
 metadata:
+  description: Subdomínio - Eventstorming
   name: operacao-rh
+  tags:
+  - emissor:subdominios
   title: Operação RH
-  description: Subdomínio - Eventstorming
-  tags:
-  - emissor:subdominios
+relations:
+- target:
+    kind: Domain
+    name: emissor
+  type: childOf
 spec:
   owner: group:default/governanca-vr
-  parent: 
+  parent:
     kind: Domain
     name: emissor
 ---
 apiVersion: backstage.io/v1alpha1
 kind: Domain
 metadata:
+  description: Subdomínio - Eventstorming
   name: cliente-rh
+  tags:
+  - emissor:subdominios
   title: Cliente RH
-  description: Subdomínio - Eventstorming
-  tags:
-  - emissor:subdominios
+relations:
+- target:
+    kind: Domain
+    name: emissor
+  type: childOf
 spec:
   owner: group:default/governanca-vr
-  parent: 
+  parent:
     kind: Domain
     name: emissor
 ---
 apiVersion: backstage.io/v1alpha1
 kind: Domain
 metadata:
+  description: Subdomínio - Eventstorming
   name: logistica-cartoes
-  title: Logística Cartões
-  description: Subdomínio - Eventstorming
   tags:
   - emissor:subdominios
+  title: Logística Cartões
+relations:
+- target:
+    kind: Domain
+    name: emissor
+  type: childOf
 spec:
   owner: group:default/governanca-vr
-  parent: 
+  parent:
     kind: Domain
     name: emissor
 ---
 apiVersion: backstage.io/v1alpha1
 kind: Domain
 metadata:
+  description: Subdomínio - Eventstorming
   name: venda-ec
+  tags:
+  - adquirente:subdominios
   title: Venda EC
-  description: Subdomínio - Eventstorming
-  tags:
-  - adquirente:subdominios
+relations:
+- target:
+    kind: Domain
+    name: adquirente
+  type: childOf
 spec:
   owner: group:default/governanca-vr
-  parent: 
+  parent:
     kind: Domain
     name: adquirente
 ---
 apiVersion: backstage.io/v1alpha1
 kind: Domain
 metadata:
+  description: Subdomínio - Eventstorming
   name: cliente-ec
+  tags:
+  - adquirente:subdominios
   title: Cliente EC
-  description: Subdomínio - Eventstorming
-  tags:
-  - adquirente:subdominios
+relations:
+- target:
+    kind: Domain
+    name: adquirente
+  type: childOf
 spec:
   owner: group:default/governanca-vr
-  parent: 
+  parent:
     kind: Domain
     name: adquirente
 ---
 apiVersion: backstage.io/v1alpha1
 kind: Domain
 metadata:
+  description: Subdomínio - Eventstorming
   name: servicos-ec
-  title: Serviços EC
-  description: Subdomínio - Eventstorming
   tags:
   - adquirente:subdominios
+  title: Serviços EC
+relations:
+- target:
+    kind: Domain
+    name: adquirente
+  type: childOf
 spec:
   owner: group:default/governanca-vr
-  parent: 
+  parent:
     kind: Domain
     name: adquirente
 ---
 apiVersion: backstage.io/v1alpha1
 kind: Domain
 metadata:
-  name: operacao-ec
-  title: Operação do EC
   description: Subdomínio - Eventstorming
+  name: operacao-ec
   tags:
   - adquirente:subdominios
+  title: Operação do EC
+relations:
+- target:
+    kind: Domain
+    name: adquirente
+  type: childOf
 spec:
   owner: group:default/governanca-vr
-  parent: 
+  parent:
     kind: Domain
     name: adquirente
