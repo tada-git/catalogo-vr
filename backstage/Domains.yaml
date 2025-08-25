@@ -6,17 +6,6 @@ metadata:
   tags:
   - dominios
   title: Comum
-relations:
-- targetRef: domain:default/comunicacao
-  type: parentOf
-- targetRef: domain:default/solucoes-financeiras
-  type: parentOf
-- targetRef: domain:default/seguranca
-  type: parentOf
-- targetRef: domain:default/renumeracao-canais
-  type: parentOf
-- targetRef: domain:default/dados-basicos
-  type: parentOf
 spec:
   owner: group:default/governanca-vr
 ---
@@ -28,15 +17,6 @@ metadata:
   tags:
   - dominios
   title: Emissor
-relations:
-- targetRef: domain:default/venda-rh
-  type: parentOf
-- targetRef: domain:default/operacao-rh
-  type: parentOf
-- targetRef: domain:default/cliente-rh
-  type: parentOf
-- targetRef: domain:default/logistica-cartoes
-  type: parentOf
 spec:
   owner: group:default/governanca-vr
 ---
@@ -48,15 +28,6 @@ metadata:
   tags:
   - dominios
   title: Adquirente
-relations:
-- targetRef: domain:default/venda-ec
-  type: parentOf
-- targetRef: domain:default/cliente-ec
-  type: parentOf
-- targetRef: domain:default/servicos-ec
-  type: parentOf
-- targetRef: domain:default/operacao-ec
-  type: parentOf
 spec:
   owner: group:default/governanca-vr
 ---
@@ -68,9 +39,6 @@ metadata:
   tags:
   - comum:subdominios
   title: Comunicação
-relations:
-- targetRef: domain:default/comum
-  type: childOf
 spec:
   owner: group:default/governanca-vr
   parent:
@@ -85,9 +53,6 @@ metadata:
   tags:
   - comum:subdominios
   title: Soluções Financeiras
-relations:
-- targetRef: domain:default/comum
-  type: childOf
 spec:
   owner: group:default/governanca-vr
   parent:
@@ -102,9 +67,6 @@ metadata:
   tags:
   - comum:subdominios
   title: Segurança
-relations:
-- targetRef: domain:default/comum
-  type: childOf
 spec:
   owner: group:default/governanca-vr
   parent:
@@ -119,9 +81,6 @@ metadata:
   tags:
   - comum:subdominios
   title: Renumeração de Canais
-relations:
-- targetRef: domain:default/comum
-  type: childOf
 spec:
   owner: group:default/governanca-vr
   parent:
@@ -136,9 +95,6 @@ metadata:
   tags:
   - comum:subdominios
   title: Dados Básicos
-relations:
-- targetRef: domain:default/comum
-  type: childOf
 spec:
   owner: group:default/governanca-vr
   parent:
@@ -153,9 +109,6 @@ metadata:
   tags:
   - emissor:subdominios
   title: Venda RH
-relations:
-- targetRef: domain:default/emissor
-  type: childOf
 spec:
   owner: group:default/governanca-vr
   parent:
@@ -170,9 +123,6 @@ metadata:
   tags:
   - emissor:subdominios
   title: Operação RH
-relations:
-- targetRef: domain:default/emissor
-  type: childOf
 spec:
   owner: group:default/governanca-vr
   parent:
@@ -187,9 +137,6 @@ metadata:
   tags:
   - emissor:subdominios
   title: Cliente RH
-relations:
-- targetRef: domain:default/emissor
-  type: childOf
 spec:
   owner: group:default/governanca-vr
   parent:
@@ -204,9 +151,6 @@ metadata:
   tags:
   - emissor:subdominios
   title: Logística Cartões
-relations:
-- targetRef: domain:default/emissor
-  type: childOf
 spec:
   owner: group:default/governanca-vr
   parent:
@@ -221,9 +165,6 @@ metadata:
   tags:
   - adquirente:subdominios
   title: Venda EC
-relations:
-- targetRef: domain:default/adquirente
-  type: childOf
 spec:
   owner: group:default/governanca-vr
   parent:
@@ -238,9 +179,6 @@ metadata:
   tags:
   - adquirente:subdominios
   title: Cliente EC
-relations:
-- targetRef: domain:default/adquirente
-  type: childOf
 spec:
   owner: group:default/governanca-vr
   parent:
@@ -255,9 +193,6 @@ metadata:
   tags:
   - adquirente:subdominios
   title: Serviços EC
-relations:
-- targetRef: domain:default/adquirente
-  type: childOf
 spec:
   owner: group:default/governanca-vr
   parent:
@@ -272,9 +207,6 @@ metadata:
   tags:
   - adquirente:subdominios
   title: Operação do EC
-relations:
-- targetRef: domain:default/adquirente
-  type: childOf
 spec:
   owner: group:default/governanca-vr
   parent:
