@@ -30,185 +30,185 @@ metadata:
   title: Adquirente
 spec:
   owner: group:default/governanca-vr
----
-apiVersion: backstage.io/v1alpha1
-kind: Domain
-metadata:
-  description: Subdomínio - Eventstorming
-  name: comunicacao
-  tags:
-  - comum:subdominios
-  title: Comunicação
-spec:
-  owner: group:default/governanca-vr
-  parent:
-    kind: Domain
-    name: comum
----
-apiVersion: backstage.io/v1alpha1
-kind: Domain
-metadata:
-  description: Subdomínio - Eventstorming
-  name: solucoes-financeiras
-  tags:
-  - comum:subdominios
-  title: Soluções Financeiras
-spec:
-  owner: group:default/governanca-vr
-  parent:
-    kind: Domain
-    name: comum
----
-apiVersion: backstage.io/v1alpha1
-kind: Domain
-metadata:
-  description: Subdomínio - Eventstorming
-  name: seguranca
-  tags:
-  - comum:subdominios
-  title: Segurança
-spec:
-  owner: group:default/governanca-vr
-  parent:
-    kind: Domain
-    name: comum
----
-apiVersion: backstage.io/v1alpha1
-kind: Domain
-metadata:
-  description: Subdomínio - Eventstorming
-  name: renumeracao-canais
-  tags:
-  - comum:subdominios
-  title: Renumeração de Canais
-spec:
-  owner: group:default/governanca-vr
-  parent:
-    kind: Domain
-    name: comum
----
-apiVersion: backstage.io/v1alpha1
-kind: Domain
-metadata:
-  description: Subdomínio - Eventstorming
-  name: dados-basicos
-  tags:
-  - comum:subdominios
-  title: Dados Básicos
-spec:
-  owner: group:default/governanca-vr
-  parent:
-    kind: Domain
-    name: comum
----
-apiVersion: backstage.io/v1alpha1
-kind: Domain
-metadata:
-  description: Subdomínio - Eventstorming
-  name: venda-rh
-  tags:
-  - emissor:subdominios
-  title: Venda RH
-spec:
-  owner: group:default/governanca-vr
-  parent:
-    kind: Domain
-    name: emissor
----
-apiVersion: backstage.io/v1alpha1
-kind: Domain
-metadata:
-  description: Subdomínio - Eventstorming
-  name: operacao-rh
-  tags:
-  - emissor:subdominios
-  title: Operação RH
-spec:
-  owner: group:default/governanca-vr
-  parent:
-    kind: Domain
-    name: emissor
----
-apiVersion: backstage.io/v1alpha1
-kind: Domain
-metadata:
-  description: Subdomínio - Eventstorming
-  name: cliente-rh
-  tags:
-  - emissor:subdominios
-  title: Cliente RH
-spec:
-  owner: group:default/governanca-vr
-  parent:
-    kind: Domain
-    name: emissor
----
-apiVersion: backstage.io/v1alpha1
-kind: Domain
-metadata:
-  description: Subdomínio - Eventstorming
-  name: logistica-cartoes
-  tags:
-  - emissor:subdominios
-  title: Logística Cartões
-spec:
-  owner: group:default/governanca-vr
-  parent:
-    kind: Domain
-    name: emissor
----
-apiVersion: backstage.io/v1alpha1
-kind: Domain
-metadata:
-  description: Subdomínio - Eventstorming
-  name: venda-ec
-  tags:
-  - adquirente:subdominios
-  title: Venda EC
-spec:
-  owner: group:default/governanca-vr
-  parent:
-    kind: Domain
-    name: adquirente
----
-apiVersion: backstage.io/v1alpha1
-kind: Domain
-metadata:
-  description: Subdomínio - Eventstorming
-  name: cliente-ec
-  tags:
-  - adquirente:subdominios
-  title: Cliente EC
-spec:
-  owner: group:default/governanca-vr
-  parent:
-    kind: Domain
-    name: adquirente
----
-apiVersion: backstage.io/v1alpha1
-kind: Domain
-metadata:
-  description: Subdomínio - Eventstorming
-  name: servicos-ec
-  tags:
-  - adquirente:subdominios
-  title: Serviços EC
-spec:
-  owner: group:default/governanca-vr
-  parent:
-    kind: Domain
-    name: adquirente
----
-apiVersion: backstage.io/v1alpha1
-kind: Domain
-metadata:
-  description: Subdomínio - Eventstorming
-  name: operacao-ec
-  tags:
-  - adquirente:subdominios
-  title: Operação do EC
-spec:
-  owner: group:default/governanca-vr
-  parent:
-    kind: Domain
-    name: adquirente
+#---
+# apiVersion: backstage.io/v1alpha1
+#kind: Domain
+#metadata:
+#  description: Subdomínio - Eventstorming
+#  name: comunicacao
+#  tags:
+#  - comum:subdominios
+#  title: Comunicação
+#spec:
+#  owner: group:default/governanca-vr
+#  parent:
+#    kind: Domain
+#    name: comum
+#---
+#apiVersion: backstage.io/v1alpha1
+#kind: Domain
+#metadata:
+#  description: Subdomínio - Eventstorming
+#  name: solucoes-financeiras
+#  tags:
+#  - comum:subdominios
+#  title: Soluções Financeiras
+#spec:
+#  owner: group:default/governanca-vr
+#  parent:
+#    kind: Domain
+#    name: comum
+#---
+#apiVersion: backstage.io/v1alpha1
+#kind: Domain
+#metadata:
+#  description: Subdomínio - Eventstorming
+#  name: seguranca
+#  tags:
+#  - comum:subdominios
+#  title: Segurança
+#spec:
+#  owner: group:default/governanca-vr
+#  parent:
+#    kind: Domain
+#    name: comum
+#---
+#apiVersion: backstage.io/v1alpha1
+#kind: Domain
+#metadata:
+#  description: Subdomínio - Eventstorming
+#  name: renumeracao-canais
+#  tags:
+#  - comum:subdominios
+#  title: Renumeração de Canais
+#spec:
+#  owner: group:default/governanca-vr
+#  parent:
+#    kind: Domain
+#    name: comum
+#---
+#apiVersion: backstage.io/v1alpha1
+#kind: Domain
+#metadata:
+#  description: Subdomínio - Eventstorming
+#  name: dados-basicos
+#  tags:
+#  - comum:subdominios
+#  title: Dados Básicos
+#spec:
+#  owner: group:default/governanca-vr
+#  parent:
+#    kind: Domain
+#    name: comum
+#---
+#apiVersion: backstage.io/v1alpha1
+#kind: Domain
+#metadata:
+#  description: Subdomínio - Eventstorming
+#  name: venda-rh
+#  tags:
+#  - emissor:subdominios
+#  title: Venda RH
+#spec:
+#  owner: group:default/governanca-vr
+#  parent:
+#    kind: Domain
+#    name: emissor
+#---
+#apiVersion: backstage.io/v1alpha1
+#kind: Domain
+#metadata:
+#  description: Subdomínio - Eventstorming
+#  name: operacao-rh
+#  tags:
+#  - emissor:subdominios
+#  title: Operação RH
+#spec:
+#  owner: group:default/governanca-vr
+#  parent:
+#    kind: Domain
+#    name: emissor
+#---
+#apiVersion: backstage.io/v1alpha1
+#kind: Domain
+#metadata:
+#  description: Subdomínio - Eventstorming
+#  name: cliente-rh
+#  tags:
+#  - emissor:subdominios
+#  title: Cliente RH
+#spec:
+#  owner: group:default/governanca-vr
+#  parent:
+#    kind: Domain
+#    name: emissor
+#---
+#apiVersion: backstage.io/v1alpha1
+#kind: Domain
+#metadata:
+#  description: Subdomínio - Eventstorming
+#  name: logistica-cartoes
+#  tags:
+#  - emissor:subdominios
+#  title: Logística Cartões
+#spec:
+#  owner: group:default/governanca-vr
+#  parent:
+#    kind: Domain
+#    name: emissor
+#---
+#apiVersion: backstage.io/v1alpha1
+#kind: Domain
+#metadata:
+#  description: Subdomínio - Eventstorming
+#  name: venda-ec
+#  tags:
+#  - adquirente:subdominios
+#  title: Venda EC
+#spec:
+#  owner: group:default/governanca-vr
+#  parent:
+#    kind: Domain
+#    name: adquirente
+#---
+#apiVersion: backstage.io/v1alpha1
+#kind: Domain
+#metadata:
+#  description: Subdomínio - Eventstorming
+#  name: cliente-ec
+#  tags:
+#  - adquirente:subdominios
+#  title: Cliente EC
+#spec:
+#  owner: group:default/governanca-vr
+#  parent:
+#    kind: Domain
+#    name: adquirente
+#---
+#apiVersion: backstage.io/v1alpha1
+#kind: Domain
+#metadata:
+#  description: Subdomínio - Eventstorming
+#  name: servicos-ec
+#  tags:
+#  - adquirente:subdominios
+#  title: Serviços EC
+#spec:
+#  owner: group:default/governanca-vr
+#  parent:
+#    kind: Domain
+#    name: adquirente
+#---
+#apiVersion: backstage.io/v1alpha1
+#kind: Domain
+#metadata:
+#  description: Subdomínio - Eventstorming
+#  name: operacao-ec
+#  tags:
+#  - adquirente:subdominios
+#  title: Operação do EC
+#spec:
+#  owner: group:default/governanca-vr
+#  parent:
+#    kind: Domain
+#    name: adquirente
