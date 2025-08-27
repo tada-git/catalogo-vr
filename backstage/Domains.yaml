@@ -1,7 +1,7 @@
 apiVersion: backstage.io/v1alpha1
 kind: Domain
 metadata:
-  description: Domínio Base - Eventstorming
+  description: Domínio Base
   name: comum
   tags:
   - dominios
@@ -12,7 +12,7 @@ spec:
 apiVersion: backstage.io/v1alpha1
 kind: Domain
 metadata:
-  description: Domínio Base - Eventstorming
+  description: Domínio Base
   name: emissor
   tags:
   - dominios
@@ -23,7 +23,7 @@ spec:
 apiVersion: backstage.io/v1alpha1
 kind: Domain
 metadata:
-  description: Domínio Base - Eventstorming
+  description: Domínio Base
   name: adquirente
   tags:
   - dominios
@@ -62,6 +62,84 @@ kind: System
 metadata:
   name: cliente-ec
   title: Cliente EC
+  description: Subdomínio
+  tags:
+    - adquirente
+spec:
+  owner: team-a
+  domain: domain:default/adquirente
+  type: Subdomínio
+---
+apiVersion: backstage.io/v1alpha1
+kind: System
+metadata:
+  name: comunicacao
+  title: Comunicação
+  description: Subdomínio
+  tags:
+    - comum
+spec:
+  owner: team-a
+  domain: domain:default/comum
+  type: Subdomínio
+---
+apiVersion: backstage.io/v1alpha1
+kind: System
+metadata:
+  name: solucoes-financeiras
+  title: Soluções Financeiras
+  description: Subdomínio
+  tags:
+    - comum
+spec:
+  owner: team-a
+  domain: domain:default/comum
+  type: Subdomínio
+---
+apiVersion: backstage.io/v1alpha1
+kind: System
+metadata:
+  name: operacao-rh
+  title: Operação RH
+  description: Subdomínio
+  tags:
+    - emissor
+spec:
+  owner: team-a
+  domain: domain:default/emissor
+  type: Subdomínio
+---
+apiVersion: backstage.io/v1alpha1
+kind: System
+metadata:
+  name: cliente-rh
+  title: Cliente RH
+  description: Subdomínio
+  tags:
+    - emissor
+spec:
+  owner: team-a
+  domain: domain:default/emissor
+  type: Subdomínio
+---
+apiVersion: backstage.io/v1alpha1
+kind: System
+metadata:
+  name: venda-ec
+  title: Venda EC
+  description: Subdomínio
+  tags:
+    - adquirente
+spec:
+  owner: team-a
+  domain: domain:default/adquirente
+  type: Subdomínio
+---
+apiVersion: backstage.io/v1alpha1
+kind: System
+metadata:
+  name: operacao-ec
+  title: Operação EC
   description: Subdomínio
   tags:
     - adquirente
