@@ -40,7 +40,7 @@ metadata:
   tags:
     - comum
 spec:
-  owner: team-a
+  owner: group:default/governanca-vr
   domain: domain:default/comum
   type: Subdomínio
 ---
@@ -53,7 +53,7 @@ metadata:
   tags:
     - emissor
 spec:
-  owner: team-a
+  owner: group:default/governanca-vr
   domain: domain:default/emissor
   type: Subdomínio
 ---
@@ -66,7 +66,7 @@ metadata:
   tags:
     - adquirente
 spec:
-  owner: team-a
+  owner: group:default/governanca-vr
   domain: domain:default/adquirente
   type: Subdomínio
 ---
@@ -79,7 +79,7 @@ metadata:
   tags:
     - comum
 spec:
-  owner: team-a
+  owner: group:default/governanca-vr
   domain: domain:default/comum
   type: Subdomínio
 ---
@@ -92,7 +92,7 @@ metadata:
   tags:
     - comum
 spec:
-  owner: team-a
+  owner: group:default/governanca-vr
   domain: domain:default/comum
   type: Subdomínio
 ---
@@ -105,7 +105,7 @@ metadata:
   tags:
     - emissor
 spec:
-  owner: team-a
+  owner: group:default/governanca-vr
   domain: domain:default/emissor
   type: Subdomínio
 ---
@@ -118,7 +118,7 @@ metadata:
   tags:
     - emissor
 spec:
-  owner: team-a
+  owner: group:default/governanca-vr
   domain: domain:default/emissor
   type: Subdomínio
 ---
@@ -131,7 +131,7 @@ metadata:
   tags:
     - adquirente
 spec:
-  owner: team-a
+  owner: group:default/governanca-vr
   domain: domain:default/adquirente
   type: Subdomínio
 ---
@@ -144,7 +144,7 @@ metadata:
   tags:
     - adquirente
 spec:
-  owner: team-a
+  owner: group:default/governanca-vr
   domain: domain:default/adquirente
   type: Subdomínio
 #---
