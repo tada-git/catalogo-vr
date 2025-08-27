@@ -35,6 +35,7 @@ apiVersion: backstage.io/v1alpha1
 kind: System
 metadata:
   name: seguranca
+  title: Segurança
   description: Subdomínio - Segurança
   tags:
     - comum
@@ -47,6 +48,7 @@ apiVersion: backstage.io/v1alpha1
 kind: System
 metadata:
   name: venda-rh
+  title: Venda RH
   description: Subdomínio - Venda RH
   tags:
     - emissor
@@ -59,6 +61,7 @@ apiVersion: backstage.io/v1alpha1
 kind: System
 metadata:
   name: cliente-ec
+  title: Cliente EC
   description: Subdomínio - Cliente EC
   tags:
     - adquirente
