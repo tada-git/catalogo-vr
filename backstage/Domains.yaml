@@ -30,6 +30,42 @@ metadata:
   title: Adquirente
 spec:
   owner: group:default/governanca-vr
+---
+apiVersion: backstage.io/v1alpha1
+kind: System
+metadata:
+  name: seguranca
+  description: Subdomínio - Segurança
+  tags:
+    - comum
+spec:
+  owner: team-a
+  domain: domain:default/comum
+  type: Subdomínio
+---
+apiVersion: backstage.io/v1alpha1
+kind: System
+metadata:
+  name: venda-rh
+  description: Subdomínio - Venda RH
+  tags:
+    - emissor
+spec:
+  owner: team-a
+  domain: domain:default/emissor
+  type: Subdomínio
+---
+apiVersion: backstage.io/v1alpha1
+kind: System
+metadata:
+  name: cliente-ec
+  description: Subdomínio - Cliente EC
+  tags:
+    - adquirente
+spec:
+  owner: team-a
+  domain: domain:default/adquirente
+  type: Subdomínio
 #---
 # apiVersion: backstage.io/v1alpha1
 #kind: Domain
