@@ -36,7 +36,7 @@ kind: System
 metadata:
   name: seguranca
   title: Segurança
-  description: Subdomínio - Segurança
+  description: Subdomínio
   tags:
     - comum
 spec:
@@ -49,7 +49,7 @@ kind: System
 metadata:
   name: venda-rh
   title: Venda RH
-  description: Subdomínio - Venda RH
+  description: Subdomínio
   tags:
     - emissor
 spec:
@@ -62,7 +62,7 @@ kind: System
 metadata:
   name: cliente-ec
   title: Cliente EC
-  description: Subdomínio - Cliente EC
+  description: Subdomínio
   tags:
     - adquirente
 spec:
