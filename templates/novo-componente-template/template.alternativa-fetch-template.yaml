@@ -106,11 +106,11 @@ spec:
           uniqueItems: true
           errorMessage: "O mesmo item foi selecionado mais de uma vez. Favor selecionar somente um de cada."
         tipoExposicaoEModeloAcesso:
-          title: Tipo de Exposição e Modelo de Acesso
-          type: array
-          description: "Selecione as TAGs apropriadas"
-          items:
-            type: string
+            title: Tipo de Exposição e Modelo de Acesso
+            type: array
+            description: "Selecione as TAGs apropriadas"
+            items:
+              type: string
             ui:field: EntityTagsPicker
             ui:options:
               allowArbitraryValues: false
