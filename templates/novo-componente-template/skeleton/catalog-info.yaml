@@ -1,0 +1,14 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: ${{ values.nome | dump }}
+  description: ${{ values.descricao | dump }}
+  tags:
+    ${{ values.tipoExposicaoEModeloAcesso | dump }}
+  annotations:
+    backstage.io/source-template: template:default/novo-componente
+spec:
+  type: ${{ values.tipoComponente }}
+  lifecycle: Novo
+  owner: ${{ values.responsavel }}
+  version: ${{ values.versao }}
