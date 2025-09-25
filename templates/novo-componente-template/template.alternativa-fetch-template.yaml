@@ -108,7 +108,7 @@ spec:
         tipoExposicaoEModeloAcesso:
             title: Tipo de Exposição e Modelo de Acesso
             type: array
-            description: "Selecione as TAGs apropriadas"
+            description: "Selecione as TAGs apropriadas para Modelo de Acesso e Tipo de Exposição."
             items:
               type: string
             ui:field: EntityTagsPicker
