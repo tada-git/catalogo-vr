@@ -38,7 +38,7 @@ spec:
           description: Versão inicial do serviço
           type: string
           default: 1.0.0
-          pattern: '^\\d+\\.\\d+\\.\\d+$'
+          pattern: '^\d+\.\d+\.\d+$'
           errorMessage: "Formato de versão inválido. Use o formato X.Y.Z (exemplo: 1.0.0)."
         responsavel:
           title: Time responsável
