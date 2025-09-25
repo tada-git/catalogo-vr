@@ -1,0 +1,216 @@
+apiVersion: scaffolder.backstage.io/v1beta3
+kind: Template
+metadata:
+  name: novo-componente
+  title: Cadastrar Componente
+  description: Template para criação de componentes do tipo Microserviço, SVC, componentes de Front (web/mobile) e bibliotecas
+spec:
+  type: service
+  parameters:
+    - title: Identificação
+      required: [tipoComponente, nome, descricao, versao, responsavel]
+      properties:
+        tipoComponente:
+          title: Tipo do Componente
+          type: string
+          enum: [servico, web, mobile, biblioteca]
+          enumNames: [Serviço, Web, Mobile, Biblioteca]
+        nome:
+          title: Nome
+          type: string
+          description: Se microserviço "ms-nome-servico", se qualquer outro tipo de serviço "svc-nome-servico"
+          ui:options:
+            pattern: '^[a-z0-9-]*$'
+        descricao:
+          title: Descrição
+          description: Breve descrição funcional do serviço
+          type: string
+          ui:widget: textarea
+          ui:options:
+            rows: 5
+          ui:help: "Dica: você pode colar texto multilinha aqui."
+          ui:placeholder: |
+            
+            Digite ou cole aqui o seu texto.
+            Múltiplas linhas são suportadas.
+        versao:
+          title: Versão
+          description: Versão inicial do serviço
+          type: string
+          default: 1.0.0
+          pattern: '^\\d+\\.\\d+\\.\\d+$'
+          errorMessage: "Formato de versão inválido. Use o formato X.Y.Z (exemplo: 1.0.0)."
+        responsavel:
+          title: Time responsável
+          description: Time responsável pelo serviço
+          type: string
+          ui:field: OwnerPicker
+          ui:options:
+            allowedKinds: [Group]
+            allowArbitraryValues: false
+        buEcossistema:
+          title: BU do Ecossistema
+          type: string
+          description: Selecione a BU do ecossistema o qual o componente faz parte
+          default: vr-beneficios
+          enum: [vr-beneficios, vr-gente, vr-mobilidade, vr-shopping, vr-vexpense]
+        conformidadesRegulamentacoes:
+          title: Conformidade e Regulamentações
+          type: array
+          items:
+            type: string
+            enum: [LGPD, PII, ISO9001, ISO25010]
+          uniqueItems: true
+          ui:widget: checkboxes
+    - title: Integração e Consumo
+      required: [tipoExposicaoEModeloAcesso]
+      properties:
+        apisConsumidas:
+          title: APIs Consumidas
+          type: array
+          description: Listagem de APIs consumidas
+          items:
+            type: string
+            title: API
+            ui:field: EntityPicker
+            ui:options:
+              catalogFilter:
+                kind: API
+          uniqueItems: true
+          errorMessage: "O mesmo item foi selecionado mais de uma vez. Favor selecionar somente um de cada."
+        componentesDependentes:
+          title: Componentes Dependentes
+          type: array
+          description: Listagem de componentes dependentes (inclui bibliotecas)
+          items:
+            type: string
+            title: Componente
+            ui:field: EntityPicker
+            ui:options:
+              catalogFilter:
+                kind: Component
+                spec.type: [service, library, externo]
+          uniqueItems: true
+          errorMessage: "O mesmo item foi selecionado mais de uma vez. Favor selecionar somente um de cada."
+        recursosConsumidos:
+          title: Recursos Consumidos
+          type: array
+          description: Listagem de recursos (infra) consumidos
+          items:
+            type: string
+            title: Recurso
+            ui:field: EntityPicker
+            ui:options:
+              catalogFilter:
+                kind: Resource
+          uniqueItems: true
+          errorMessage: "O mesmo item foi selecionado mais de uma vez. Favor selecionar somente um de cada."
+        tipoExposicaoEModeloAcesso:
+          title: Tipo de Exposição e Modelo de Acesso
+          type: array
+          description: "Selecione as TAGs apropriadas"
+          items:
+            type: string
+            ui:field: EntityTagsPicker
+            ui:options:
+              allowArbitraryValues: false
+              kinds: [Component]
+    - title: Observabilidade
+      properties:
+        capacity:
+          title: Capacidade Prevista (somente para serviços)
+          type: string
+          description: A capacidade do serviço em transações por segundo. (TPS)
+          pattern: '^[0-9]+'
+          errorMessage: "Entre somente com um número"
+        sla:
+          title: SLA Previsto (somente para serviços)
+          type: string
+          description: A SLA do serviço, ou seja, o tempo de resposta máximo. (em milisegundos - ms)
+          pattern: '^[0-9]+'
+          errorMessage: "Entre somente com um número"
+    - title: Tecnologia
+      required: [tecnologias]
+      properties:
+        tecnologias:
+          title: Tecnologias
+          type: array
+          description: Listagem de tecnologias utilizadas
+          items:
+            type: string
+            title: Tecnologia
+        javaVersion:
+          title: Java Version
+          type: string
+          description: "Versao do java utilizada pela aplicacao (Ex: 8, 11, 17)"
+          default: "17"
+          enum: ["11", "17", "21"]
+    - title: Versionamento
+      required: [repoUrl]
+      properties:
+        repoUrl:
+          title: Repository Location
+          type: string
+          ui:field: RepoUrlPicker
+          ui:options:
+            allowedHosts: [github.com]
+            allowedOwners: [vr-beneficios, vr-gente, vr-mobilidade, vr-shopping]
+    - title: Informações para Deploy
+      required: [helmNamespace, helmTimeUnidadeNegocio, helmTimeProduto, helmTimeCentroCusto]
+      properties:
+        helmNamespace:
+          title: Namespace
+          type: string
+          description: Nome do namespace onde o componente sera implantado
+        helmTimeUnidadeNegocio:
+          title: Unidade de negócio
+          type: string
+          description: Nome da unidade de negocio para identificacao atraves das labels
+        helmTimeProduto:
+          title: Produto
+          type: string
+          description: Nome do produto que o servico faz parte
+        helmTimeCentroCusto:
+          title: Centro de Custo
+          type: string
+          description: Identificado do CR utilizado pelo servico
+          default: "01234"
+          enum: ["01234", "56789", "02025"]
+  steps:
+    - id: fetch-skeleton
+      name: Fetch Skeleton
+      action: fetch:template
+      input:
+        url: ./skeleton
+        values:
+          nome: ${{ parameters.nome }}
+          descricao: ${{ parameters.descricao }}
+          tipoComponente: ${{ parameters.tipoComponente }}
+          responsavel: ${{ parameters.responsavel }}
+          versao: ${{ parameters.versao }}
+          tipoExposicaoEModeloAcesso: ${{ parameters.tipoExposicaoEModeloAcesso }}
+    - id: publish
+      name: Publica o repo no github
+      action: publish:github
+      if: ${{ parameters.repoUrl.includes('github.com') }}
+      input:
+        allowedHosts: [github.com]
+        description: ${{ parameters.descricao }}
+        repoUrl: ${{ parameters.repoUrl }}
+        gitCommitMessage: "Initial: Criacao do repositorio e esqueleto do projeto ${{ parameters.nome }}"
+        defaultBranch: main
+        repoVisibility: public
+    - id: register
+      name: Register
+      action: catalog:register
+      if: ${{ parameters.repoUrl.includes('github.com') }}
+      input:
+        repoContentsUrl: ${{ steps['publish'].output.repoContentsUrl }}
+        catalogInfoPath: /catalog-info.yaml
+      output:
+        links:
+          - title: Repository
+            url: ${{ steps['publish'].output.remoteUrl }}
+          - title: Abrir no catálogo
+            icon: catalog
+            entityRef: ${{ steps.register.output.entityRef }}
