@@ -194,7 +194,6 @@ spec:
       action: publish:github:pull-request
       if: ${{ parameters.repoUrl.includes('github.com') }}
       input:
-        allowedHosts: ['github.com']
         repoUrl: ${{ parameters.repoUrl }}
         branchName: component-${{ parameters.nome }}
         title: 'Initial: Criacao do repositorio e esqueleto do projeto ${{ parameters.nome }}'
