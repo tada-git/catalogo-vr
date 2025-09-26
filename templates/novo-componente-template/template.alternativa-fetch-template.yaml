@@ -191,14 +191,14 @@ spec:
           tipoExposicaoEModeloAcesso: ${{ parameters.tipoExposicaoEModeloAcesso }}
     - id: publish
       name: Publica o repo no github
-      action: publish:github
+      action: github:publish
       if: ${{ parameters.repoUrl.includes('github.com') }}
       input:
         description: "Initial: Criacao do repositorio e esqueleto do projeto ${{ parameters.nome }}"
         repoUrl: ${{ parameters.repoUrl }}
-        targetPath: assets/servicos
+        remotePath: assets/servicos
         commitMessage: "Initial: Criacao do repositorio e esqueleto do projeto ${{ parameters.nome }}"
-        defaultBranch: main
+        branch: main
         repoVisibility: public
     - id: register
       name: Register
