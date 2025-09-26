@@ -196,9 +196,8 @@ spec:
       input:
         description: "Initial: Criacao do repositorio e esqueleto do projeto ${{ parameters.nome }}"
         repoUrl: ${{ parameters.repoUrl }}
-        branch: main
-        path: assets/servicos
-        gitCommitMessage: "Initial: Criacao do repositorio e esqueleto do projeto ${{ parameters.nome }}"
+        targetPath: assets/servicos
+        commitMessage: "Initial: Criacao do repositorio e esqueleto do projeto ${{ parameters.nome }}"
         defaultBranch: main
         repoVisibility: public
     - id: register
