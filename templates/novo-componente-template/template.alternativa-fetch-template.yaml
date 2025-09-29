@@ -197,7 +197,7 @@ spec:
         repoUrl: ${{ parameters.repoUrl }}
         defaultBranch: main
         gitCommitMessage: 'Initial: Criacao do repositorio e esqueleto do projeto ${{ parameters.nome }}'
-        description: ${{ parameters.descricao }}
+        description: 'Initial: Criacao do repositorio e esqueleto do projeto ${{ parameters.nome }}'
     - id: register
       name: Register
       action: catalog:register
