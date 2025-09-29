@@ -9,7 +9,6 @@ metadata:
     backstage.io/source-template: template:default/novo-componente
     gov.vr/identificacao/buEcossistema:  ${{ values.buEcossistema | dump }}
     gov.vr/identificacao/conformidadesRegulamentacoes: ${{ values.conformidadesRegulamentacoes | dump }}
-    gov.vr/integracao/tipoExposicaoEModeloAcesso: ${{ values.tipoExposicaoEModeloAcesso | dump }}
     gov.vr/observabilidade/capacity: ${{ values.capacity | dump }}
     gov.vr/observabilidade/sla: ${{ values.sla | dump }}
     gov.vr/tecnologia/tecnologias: ${{ values.tecnologias | dump }}
