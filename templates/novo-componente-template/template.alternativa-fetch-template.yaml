@@ -188,16 +188,13 @@ spec:
           responsavel: ${{ parameters.responsavel }}
           versao: ${{ parameters.versao }}
           buEcossistema:  ${{ parameters.buEcossistema }}
-          conformidadesRegulamentacoes: ${{ parameters.conformidadesRegulamentacoes }}
-
+          conformidadesRegulamentacoes: ${{ parameters.conformidadesRegulamentacoes | default([]) | join(',') }}
           apisConsumidas: ${{ parameters.apisConsumidas }}
           componentesERecursosDependentes: ${{ (parameters.componentesDependentes | default([]) ).concat(parameters.recursosConsumidos | default([]) ) }}
-          tipoExposicaoEModeloAcesso: ${{ parameters.tipoExposicaoEModeloAcesso }}
-
+          tipoExposicaoEModeloAcesso: ${{ parameters.tipoExposicaoEModeloAcesso | default([]) | join(',') }}
           capacity: ${{ parameters.capacity }}
           sla: ${{ parameters.sla }}
-
-          tecnologias: ${{ parameters.tecnologias }}
+          tecnologias: ${{ parameters.tecnologias | default([]) | join(',') }}
           javaVersion: ${{ parameters.javaVersion }}
     - id: publish
       name: Publica o repo no github
