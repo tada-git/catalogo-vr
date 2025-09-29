@@ -191,16 +191,13 @@ spec:
           tipoExposicaoEModeloAcesso: ${{ parameters.tipoExposicaoEModeloAcesso }}
     - id: publish
       name: Publica o repo no github
-      action: publish:github:pull-request
+      action: publish:github
       if: ${{ parameters.repoUrl.includes('github.com') }}
       input:
         repoUrl: ${{ parameters.repoUrl }}
-        branchName: component-${{ parameters.nome }}
-        title: 'Initial: Criacao do repositorio e esqueleto do projeto ${{ parameters.nome }}'
+        defaultBranch: main
+        gitCommitMessage: 'Initial: Criacao do repositorio e esqueleto do projeto ${{ parameters.nome }}'
         description: ${{ parameters.descricao }}
-        commitMessage: 'Initial: Criacao do repositorio e esqueleto do projeto ${{ parameters.nome }}'
-        # Adiciona o novo componente no caminho correto dentro do repositório
-        sourcePath: ${{ parameters.nome }}
     - id: register
       name: Register
       action: catalog:register
