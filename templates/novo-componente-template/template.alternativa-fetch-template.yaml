@@ -191,8 +191,7 @@ spec:
           conformidadesRegulamentacoes: ${{ parameters.conformidadesRegulamentacoes }}
 
           apisConsumidas: ${{ parameters.apisConsumidas }}
-          componentesDependentes: ${{ parameters.componentesDependentes }}
-          recursosConsumidos: ${{ parameters.recursosConsumidos }}
+          componentesERecursosDependentes: ${{ (parameters.componentesDependentes | default([]) ).concat(parameters.recursosConsumidos | default([]) ) }}
           tipoExposicaoEModeloAcesso: ${{ parameters.tipoExposicaoEModeloAcesso }}
 
           capacity: ${{ parameters.capacity }}
