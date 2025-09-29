@@ -7,12 +7,12 @@ metadata:
     ${{ values.tipoExposicaoEModeloAcesso | dump }}
   annotations:
     backstage.io/source-template: template:default/novo-componente
-    gov.vr.com.br/identificacao/buEcossistema:  ${{ values.buEcossistema | dump }}
-    gov.vr.com.br/identificacao/conformidadesRegulamentacoes: ${{ values.conformidadesRegulamentacoes | dump }}
-    gov.vr.com.br/observabilidade/capacity: ${{ values.capacity | dump }}
-    gov.vr.com.br/observabilidade/sla: ${{ values.sla | dump }}
-    gov.vr.com.br/tecnologia/tecnologias: ${{ values.tecnologias | dump }}
-    gov.vr.com.br/tecnologia/javaVersion: ${{ values.javaVersion | dump }}
+    vr.com.br/identificacao/buEcossistema:  ${{ values.buEcossistema | dump }}
+    vr.com.br/identificacao/conformidadesRegulamentacoes: ${{ values.conformidadesRegulamentacoes | dump }}
+    vr.com.br/observabilidade/capacity: ${{ values.capacity | dump }}
+    vr.com.br/observabilidade/sla: ${{ values.sla | dump }}
+    vr.com.br/tecnologia/tecnologias: ${{ values.tecnologias | dump }}
+    vr.com.br/tecnologia/javaVersion: ${{ values.javaVersion | dump }}
 spec:
   type: ${{ values.tipoComponente | dump }}
   lifecycle: Novo
