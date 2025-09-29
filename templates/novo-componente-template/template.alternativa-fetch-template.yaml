@@ -183,7 +183,7 @@ spec:
         url: ./skeleton
         values:
           nome: ${{ parameters.nome }}
-          descricao: ${{ parameters.descricao.replace('\n', '\n\r') }}
+          descricao: ${{ parameters.descricao.replaceall('\n', '\n\r') }}
           tipoComponente: ${{ parameters.tipoComponente }}
           responsavel: ${{ parameters.responsavel }}
           versao: ${{ parameters.versao }}
