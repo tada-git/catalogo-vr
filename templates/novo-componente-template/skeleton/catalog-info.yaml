@@ -7,19 +7,18 @@ metadata:
     ${{ values.tipoExposicaoEModeloAcesso | dump }}
   annotations:
     backstage.io/source-template: template:default/novo-componente
-
-    gov.vr/identificacao/buEcossistema:  ${{ parameters.buEcossistema }}
-    gov.vr/identificacao/conformidadesRegulamentacoes: ${{ parameters.conformidadesRegulamentacoes }}
-    gov.vr/integracao/tipoExposicaoEModeloAcesso: ${{ parameters.tipoExposicaoEModeloAcesso }}
-    gov.vr/observabilidade/capacity: ${{ parameters.capacity }}
-    gov.vr/observabilidade/sla: ${{ parameters.sla }}
-    gov.vr/tecnologia/tecnologias: ${{ parameters.tecnologias }}
-    gov.vr/tecnologia/javaVersion: ${{ parameters.javaVersion }}
+    gov.vr/identificacao/buEcossistema:  ${{ values.buEcossistema | dump }}
+    gov.vr/identificacao/conformidadesRegulamentacoes: ${{ values.conformidadesRegulamentacoes | dump }}
+    gov.vr/integracao/tipoExposicaoEModeloAcesso: ${{ values.tipoExposicaoEModeloAcesso | dump }}
+    gov.vr/observabilidade/capacity: ${{ values.capacity | dump }}
+    gov.vr/observabilidade/sla: ${{ values.sla | dump }}
+    gov.vr/tecnologia/tecnologias: ${{ values.tecnologias | dump }}
+    gov.vr/tecnologia/javaVersion: ${{ values.javaVersion | dump }}
 spec:
-  type: ${{ values.tipoComponente }}
+  type: ${{ values.tipoComponente | dump }}
   lifecycle: Novo
-  owner: ${{ values.responsavel }}
-  version: ${{ values.versao }}
-  consumesApis: ${{ parameters.apisConsumidas }}
-  dependsOn: ${{ parameters.componentesDependentes }}
-  dependsOn: ${{ parameters.recursosConsumidos }}
+  owner: ${{ values.responsavel | dump }}
+  version: ${{ values.versao | dump }}
+  consumesApis: ${{ values.apisConsumidas | dump }}
+  dependsOn: ${{ values.componentesDependentes | dump }}
+  dependsOn: ${{ values.recursosConsumidos | dump }}
