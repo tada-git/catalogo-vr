@@ -13,8 +13,7 @@ spec:
         tipoComponente:
           title: Tipo do Componente
           type: string
-          enum: [servico, web, mobile, biblioteca]
-          enumNames: [Serviço, Web, Mobile, Biblioteca]
+          enum: [Serviço, Web, Mobile, Biblioteca]
         nome:
           title: Nome
           type: string
