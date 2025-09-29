@@ -7,8 +7,19 @@ metadata:
     ${{ values.tipoExposicaoEModeloAcesso | dump }}
   annotations:
     backstage.io/source-template: template:default/novo-componente
+
+    gov.vr/identificacao/buEcossistema:  ${{ parameters.buEcossistema }}
+    gov.vr/identificacao/conformidadesRegulamentacoes: ${{ parameters.conformidadesRegulamentacoes }}
+    gov.vr/integracao/tipoExposicaoEModeloAcesso: ${{ parameters.tipoExposicaoEModeloAcesso }}
+    gov.vr/observabilidade/capacity: ${{ parameters.capacity }}
+    gov.vr/observabilidade/sla: ${{ parameters.sla }}
+    gov.vr/tecnologia/tecnologias: ${{ parameters.tecnologias }}
+    gov.vr/tecnologia/javaVersion: ${{ parameters.javaVersion }}
 spec:
   type: ${{ values.tipoComponente }}
   lifecycle: Novo
   owner: ${{ values.responsavel }}
   version: ${{ values.versao }}
+  consumesApis: ${{ parameters.apisConsumidas }}
+  dependsOn: ${{ parameters.componentesDependentes }}
+  dependsOn: ${{ parameters.recursosConsumidos }}
