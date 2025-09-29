@@ -20,5 +20,4 @@ spec:
   owner: ${{ values.responsavel | dump }}
   version: ${{ values.versao | dump }}
   consumesApis: ${{ values.apisConsumidas | dump }}
-  dependsOn: ${{ values.componentesDependentes | dump }}
-  dependsOn: ${{ values.recursosConsumidos | dump }}
+  dependsOn: ${{ values.componentesERecursosDependentes | dump }}
