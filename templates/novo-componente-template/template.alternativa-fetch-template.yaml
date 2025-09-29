@@ -184,7 +184,7 @@ spec:
         url: ./skeleton
         values:
           nome: ${{ parameters.nome }}
-          descricao: ${{ parameters.descricao }}
+          descricao: ${{ parameters.descricao.replace('\n', '\n\r' }}
           tipoComponente: ${{ parameters.tipoComponente }}
           responsavel: ${{ parameters.responsavel }}
           versao: ${{ parameters.versao }}
