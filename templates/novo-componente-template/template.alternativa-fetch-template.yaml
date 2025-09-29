@@ -187,7 +187,19 @@ spec:
           tipoComponente: ${{ parameters.tipoComponente }}
           responsavel: ${{ parameters.responsavel }}
           versao: ${{ parameters.versao }}
+          buEcossistema:  ${{ parameters.buEcossistema }}
+          conformidadesRegulamentacoes: ${{ parameters.conformidadesRegulamentacoes }}
+
+          apisConsumidas: ${{ parameters.apisConsumidas }}
+          componentesDependentes: ${{ parameters.componentesDependentes }}
+          recursosConsumidos: ${{ parameters.recursosConsumidos }}
           tipoExposicaoEModeloAcesso: ${{ parameters.tipoExposicaoEModeloAcesso }}
+
+          capacity: ${{ parameters.capacity }}
+          sla: ${{ parameters.sla }}
+
+          tecnologias: ${{ parameters.tecnologias }}
+          javaVersion: ${{ parameters.javaVersion }}
     - id: publish
       name: Publica o repo no github
       action: publish:github
