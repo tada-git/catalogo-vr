@@ -18,8 +18,8 @@ spec:
           title: Nome
           type: string
           description: Se microserviço "ms-nome-servico", se qualquer outro tipo de serviço "svc-nome-servico"
-          ui:options:
-            pattern: '^[a-z0-9-]*$'
+          pattern: '^[a-z][a-z0-9-]*$'
+            errorMessage: Nome inválido. É aceito somente letras minusculas, números e hífem.
         descricao:
           title: Descrição
           description: Breve descrição funcional do serviço
