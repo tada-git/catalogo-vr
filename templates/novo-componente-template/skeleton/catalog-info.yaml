@@ -20,9 +20,5 @@ spec:
   lifecycle: Novo
   owner: ${{ values.responsavel | dump }}
   version: ${{ values.versao | dump }}
-  {% if values.apisConsumidas %}
   consumesApis: ${{ values.apisConsumidas | dump }}
-  {% endif %}
-  {% if values.componentesERecursosDependentes %}
   dependsOn: ${{ values.componentesERecursosDependentes | dump }}
-  {% endif %}
