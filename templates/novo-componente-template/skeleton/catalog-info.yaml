@@ -9,16 +9,20 @@ metadata:
   annotations:
     backstage.io/source-template: template:default/novo-componente
     gov.vr/identificacao.buEcossistema:  ${{ values.buEcossistema | dump }}
-    gov.vr/identificacao.conformidadesRegulamentacoes: ${{ values.conformidadesRegulamentacoes | dump }}
-    gov.vr/observabilidade.capacity: ${{ values.capacity | dump }}
-    gov.vr/observabilidade.sla: ${{ values.sla | dump }}
+    gov.vr/identificacao.conformidadesRegulamentacoes: ${{ values.conformidadesRegulamentacoes | default('n/a') }}
+    gov.vr/observabilidade.capacity: ${{ values.capacity | default('n/a') }}
+    gov.vr/observabilidade.sla: ${{ values.sla | default('n/a') }}
     gov.vr/tecnologia.tecnologias: ${{ values.tecnologias | dump }}
-    gov.vr/tecnologia.javaVersion: ${{ values.javaVersion | dump }}
+    gov.vr/tecnologia.javaVersion: ${{ values.javaVersion | default('n/a') }}
     gov.vr/informacao.mensagem: "Pendente de avaliação no EventStorming"
 spec:
   type: ${{ values.tipoComponente | dump }}
   lifecycle: Novo
   owner: ${{ values.responsavel | dump }}
   version: ${{ values.versao | dump }}
+  {% if values.apisConsumidas %}
   consumesApis: ${{ values.apisConsumidas | dump }}
+  {% endif %}
+  {% if values.componentesERecursosDependentes %}
   dependsOn: ${{ values.componentesERecursosDependentes | dump }}
+  {% endif %}
