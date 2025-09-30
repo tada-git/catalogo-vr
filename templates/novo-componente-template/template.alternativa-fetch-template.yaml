@@ -17,7 +17,7 @@ spec:
         nome:
           title: Nome
           type: string
-          description: "Se microserviço utilize \"ms-nome-servico\", se qualquer outro tipo de serviço use \"svc-nome-servico\". \n\rSe outros componentes é aceito somente letras minúsculas, números ou hífem."
+          description: "Se microserviço utilize \"ms-nome-servico\", se qualquer outro tipo de serviço use \"svc-nome-servico\". Para outros componentes é aceito somente letras minúsculas, números ou hífem."
           pattern: '^[a-z][a-z0-9-]*$'
           errorMessage: 
             pattern: 'Use apenas letras minúsculas, números e hífen; comece com letra.'
