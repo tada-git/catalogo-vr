@@ -2,6 +2,7 @@ apiVersion: backstage.io/v1alpha1
 kind: Component
 metadata:
   name: ${{ values.nome | dump }}
+  namespace: ${{ values.buEcossistema | dump }}
   description: ${{ values.descricao | dump }}
   tags:
     ${{ values.tipoExposicaoEModeloAcesso | dump }}
@@ -13,6 +14,7 @@ metadata:
     gov.vr/observabilidade.sla: ${{ values.sla | dump }}
     gov.vr/tecnologia.tecnologias: ${{ values.tecnologias | dump }}
     gov.vr/tecnologia.javaVersion: ${{ values.javaVersion | dump }}
+    gov.vr/informacao.mensagem: "Pendente de passar no EventStorming"
 spec:
   type: ${{ values.tipoComponente | dump }}
   lifecycle: Novo
