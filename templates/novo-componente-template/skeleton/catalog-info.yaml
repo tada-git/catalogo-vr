@@ -14,7 +14,7 @@ metadata:
     gov.vr/observabilidade.sla: ${{ values.sla | dump }}
     gov.vr/tecnologia.tecnologias: ${{ values.tecnologias | dump }}
     gov.vr/tecnologia.javaVersion: ${{ values.javaVersion | dump }}
-    gov.vr/informacao.mensagem: "Pendente de passar no EventStorming"
+    gov.vr/informacao.mensagem: "Pendente de avaliação no EventStorming"
 spec:
   type: ${{ values.tipoComponente | dump }}
   lifecycle: Novo
