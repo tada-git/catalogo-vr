@@ -113,7 +113,6 @@ spec:
               type: string
             minItems: 1
             ui:field: EntityTagsPicker
-            ui:help: "Selecione ao menos uma tag. Este campo é obrigatório."
             ui:options:
               allowArbitraryValues: false
               kinds: [Component]
