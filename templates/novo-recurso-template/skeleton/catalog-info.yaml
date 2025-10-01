@@ -1,0 +1,34 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: ${{ values.nome | dump }}
+  # namespace: ${{ values.buEcossistema | dump }} #removido pois o namespace qdo diferente de default aparece na lista e no nome (tela) quebrando a tela - viabilizar customizar a tela no futuro se houver necessidade do uso de namespace
+  description: ${{ values.descricao | dump }}
+  tags:
+    ${{ values.tipoExposicaoEModeloAcesso | dump }}
+  annotations:
+    backstage.io/source-template: template:default/novo-componente
+    gov.vr/identificacao.buEcossistema:  ${{ values.buEcossistema | dump }}
+    gov.vr/identificacao.conformidadesRegulamentacoes: ${{ values.conformidadesRegulamentacoes | default('n/a') }}
+    gov.vr/observabilidade.capacity: "${{ values.capacity | default('n/a') }}"
+    gov.vr/observabilidade.sla: "${{ values.sla | default('n/a') }}"
+    gov.vr/tecnologia.tecnologias: ${{ values.tecnologias | dump }}
+    gov.vr/tecnologia.javaVersion: ${{ values.javaVersion | default('n/a') }}
+    {% if values.tipoComponente === 'Serviço' %}
+    gov.vr/informacao.mensagem: "Pendente de avaliação no EventStorming"
+    {% elif values.tipoComponente === 'Web' or values.tipoComponente === 'Mobile' %}
+    gov.vr/informacao.mensagem: "Pendente de avaliação do Chapter de Frontend"
+    {% elif values.tipoComponente === 'Biblioteca' %}
+    gov.vr/informacao.mensagem: "Pendente de avaliação do Chapter de Backend"
+    {% endif %}
+spec:
+  type: ${{ values.tipoComponente | dump }}
+  lifecycle: Novo
+  owner: ${{ values.responsavel | dump }}
+  version: ${{ values.versao | dump }}
+  {% if (values.apisConsumidas | default([]) | length) > 0 %}
+  consumesApis: ${{ values.apisConsumidas | dump }}
+  {% endif %}
+  {% if (values.componentesERecursosDependentes | default([]) | length) > 0 %}
+  dependsOn: ${{ values.componentesERecursosDependentes | dump }}
+  {% endif %}

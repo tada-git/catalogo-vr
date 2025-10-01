@@ -1,0 +1,8 @@
+apiVersion: backstage.io/v1alpha1
+kind: Location
+metadata:
+  name: template-novo-recurso
+  description: Location que referencia o software template
+spec:
+  targets:
+    - ./recurso-template.yaml

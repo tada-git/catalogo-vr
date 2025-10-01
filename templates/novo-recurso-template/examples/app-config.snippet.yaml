@@ -1,0 +1,13 @@
+# app-config.yaml (trecho)
+scaffolder:
+  defaultAuthor:
+    name: Scaffolder
+    email: scaffolder@backstage.io
+  defaultCommitMessage: 'Initial commit'
+
+catalog:
+  locations:
+    - type: url
+      target: https://SEU_GIT/SEU_REPO/path/para/catalog-info.yaml
+      rules:
+        - allow: [Template]
