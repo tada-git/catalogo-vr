@@ -111,6 +111,7 @@ spec:
             description: "Selecione as TAGs apropriadas para Modelo de Acesso e Tipo de Exposição."
             items:
               type: string
+            minItems: 1
             ui:field: EntityTagsPicker
             ui:options:
               allowArbitraryValues: false
@@ -139,6 +140,7 @@ spec:
           items:
             type: string
             title: Tecnologia
+          minItems: 1
         javaVersion:
           title: Java Version
           type: string
