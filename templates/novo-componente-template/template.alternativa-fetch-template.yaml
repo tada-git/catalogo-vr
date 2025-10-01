@@ -89,7 +89,7 @@ spec:
             ui:options:
               catalogFilter:
                 kind: Component
-                spec.type: [service, library, externo]
+                spec.type: [Serviço, Biblioteca, Web, Mobile, Externo]
           uniqueItems: true
           errorMessage: "O mesmo item foi selecionado mais de uma vez. Favor selecionar somente um de cada."
         recursosConsumidos:
