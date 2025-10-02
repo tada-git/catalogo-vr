@@ -17,8 +17,8 @@ metadata:
     gov.vr/identificacao.conformidadesRegulamentacoes: ${{ values.conformidadesRegulamentacoes | default('n/a') }}
     gov.vr/detalhamento-tecnico.natureza: ${{ values.natureza }}
     gov.vr/detalhamento-tecnico.cloudProvider: ${{ values.cloudProvider }}
-    gov.vr/custo.produtoRelacionado: ${{ values. }}
-    gov.vr/custo.centroDeCusto: ${{ values.produtoRelacionado }}
+    gov.vr/custo.produtoRelacionado: ${{ values.produtoRelacionado }}
+    gov.vr/custo.centroDeCusto: ${{ values.centroDeCusto }}
     gov.vr/custo.custo: ${{ values.custo }}
     gov.vr/custo.periodicidade: ${{ values.periodicidade }}
     gov.vr/observabilidade.monitoramento: ${{ values.monitoramento }}
