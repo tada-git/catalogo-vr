@@ -8,7 +8,7 @@ spec:
   type: resource
   parameters:
   - title: Identificação e Governança
-    required: [nome, descricao, versao, responsavel]
+    required: [nome, descricao, versao, responsavel, buEcossistema]
     properties:
       nome:
         title: Nome
@@ -56,7 +56,7 @@ spec:
         uniqueItems: true
         ui:widget: checkboxes
   - title: Detalhamento Técnico
-    required: [tipoComponente, natureza]
+    required: [tipoComponente, natureza, tipoExposicaoEModeloAcesso]
     properties:
       tipoComponente:
         title: Tipo de Recurso
@@ -115,6 +115,7 @@ spec:
         uniqueItems: true
         errorMessage: "O mesmo item foi selecionado mais de uma vez. Favor selecionar somente um de cada."
   - title: Custos
+    required: [produtoRelacionado]
     properties:
       produtoRelacionado:
         title: Produto VR Relacionado
@@ -141,7 +142,7 @@ spec:
         title: Monitoramento Principal
         type: string
         description: A ferramenta principal utilizada para monitorar este recurso
-        enum: [CloudProvider, Dynatrace, Grafana, Zabbix, Prometheus]        
+        enum: [Nativo-CloudProvider, Dynatrace, Grafana, Zabbix, Prometheus]        
       urlMonitoramento:
         title: URL do Monitoramento
         type: string
