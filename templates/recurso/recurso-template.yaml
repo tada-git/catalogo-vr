@@ -3,7 +3,7 @@ kind: Template
 metadata:
   name: novo-recurso
   title: Cadastrar Recurso de Infra
-  description: Template para criação de Infraestrutura
+  description: Execute para registrar recursos de infraestrutura no catálogo.
 spec:
   type: resource
   parameters:

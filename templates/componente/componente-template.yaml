@@ -3,7 +3,7 @@ kind: Template
 metadata:
   name: novo-componente
   title: Cadastrar Componente
-  description: Template para criação de componentes do tipo Microserviço, SVC, componentes de Front (web/mobile) e bibliotecas
+  description: Execute para registrar componentes do tipo Microserviço, SVC, componentes de Front (web/mobile) e bibliotecas no catálogo.
 spec:
   type: service
   parameters:
