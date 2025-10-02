@@ -5,5 +5,5 @@ metadata:
   description: Coleção de templates
 spec:
   targets:
-    - ./novo-componente-template/template.alternativa-fetch-template.yaml
-    - ./novo-recurso-template/recurso-template.yaml
+    - ./componente/template.alternativa-fetch-template.yaml
+    - ./recurso/recurso-template.yaml
