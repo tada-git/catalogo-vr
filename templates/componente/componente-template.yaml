@@ -18,10 +18,10 @@ spec:
         nome:
           title: Nome
           type: string
-          description: "Se microserviço utilize \"ms-nome-servico\", se qualquer outro tipo de serviço use \"svc-nome-servico\". Para outros componentes somente letras minúsculas, números ou hífem."
-          pattern: '^[a-z][a-z0-9-]*$'
+          description: "Se microserviço utilize \"MS Nome Serviço\", se qualquer outro tipo de serviço use \"SVC Nome Serviço\". É permitido KebabCase ou snake-case, espaços viram hífen."
+          pattern: '^[a-zA-Z][a-zA-Z0-9-\s]*$'
           errorMessage: 
-            pattern: 'Use apenas letras minúsculas, números e hífen; comece com letra.'
+            pattern: 'É aceito KebabCase, snake-case, letras, números, hífen, underscore e espaço. Sempre começe com uma letra.'
         descricao:
           title: Descrição
           description: Breve descrição funcional do serviço

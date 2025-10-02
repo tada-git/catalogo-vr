@@ -1,7 +1,8 @@
 apiVersion: backstage.io/v1alpha1
 kind: Component
 metadata:
-  name: ${{ values.nome | dump }}
+  name: ${{ values.nome | lower | replace(' ', '-') }}
+  title: ${{ values.nome | dump }}
   # namespace: ${{ values.buEcossistema | dump }} #removido pois o namespace qdo diferente de default aparece na lista e no nome (tela) quebrando a tela - viabilizar customizar a tela no futuro se houver necessidade do uso de namespace
   description: ${{ values.descricao | dump }}
   tags:
