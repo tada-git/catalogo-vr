@@ -6,6 +6,10 @@ metadata:
   description: ${{ values.descricao | dump }}
   tags:
     ${{ values.tipoExposicaoEModeloAcesso | dump }}
+  links:
+    - url: ${{ values.urlMonitoramento }}
+        title: Dashboard
+        icon: dashboard
   annotations:
     backstage.io/source-template: template:default/novo-componente
     gov.vr/identificacao.buEcossistema:  ${{ values.buEcossistema | dump }}

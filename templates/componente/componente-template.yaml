@@ -6,6 +6,7 @@ metadata:
   description: Execute para registrar componentes do tipo Microserviço, SVC, componentes de Front (web/mobile) e bibliotecas no catálogo.
 spec:
   type: service
+  owner: "group:default/governanca-vr"
   parameters:
     - title: Identificação
       required: [tipoComponente, nome, descricao, versao, responsavel]
