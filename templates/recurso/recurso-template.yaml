@@ -172,15 +172,19 @@ spec:
           tipoComponente: ${{ parameters.tipoComponente }}
           responsavel: ${{ parameters.responsavel }}
           versao: ${{ parameters.versao }}
-          buEcossistema:  ${{ parameters.buEcossistema }}
+          buEcossistema: ${{ parameters.buEcossistema }}
           conformidadesRegulamentacoes: ${{ parameters.conformidadesRegulamentacoes | default([]) | join(', ') }}
-          apisConsumidas: ${{ parameters.apisConsumidas }}
-          componentesERecursosDependentes: ${{ (parameters.componentesDependentes | default([]) ).concat(parameters.recursosConsumidos | default([]) ) }}
+          natureza: ${{ parameters.natureza }}
+          cloudProvider: ${{ parameters.cloudProvider | default('n/a') }}
           tipoExposicaoEModeloAcesso: ${{ parameters.tipoExposicaoEModeloAcesso }}
-          capacity: ${{ parameters.capacity }}
-          sla: ${{ parameters.sla }}
-          tecnologias: ${{ parameters.tecnologias | default([]) | join(', ') }}
-          javaVersion: ${{ parameters.javaVersion }}
+          componentesConsumidores: ${{ parameters.componentesConsumidores }}
+          recursosDependentes: ${{ parameters.recursosDependentes }}
+          produtoRelacionado: ${{ parameters.produtoRelacionado }}
+          centroDeCusto: ${{ parameters.centroDeCusto | default('n/a') }}
+          custo: ${{ parameters.custo | default('n/a') }}
+          periodicidade: ${{ parameters.periodicidade | default('n/a') }}
+          monitoramento: ${{ parameters.monitoramento }}
+          urlMonitoramento: ${{ parameters.urlMonitoramento }}
     - id: publish
       name: Publica o repo no github
       action: publish:github
