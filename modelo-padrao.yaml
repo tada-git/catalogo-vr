@@ -1,0 +1,10 @@
+apiVersion: backstage.io/v1alpha1
+kind: Location
+metadata:
+  name: modelo-padrao-gov.vr
+  description: Modelo de Governança VR
+spec:
+  targets:
+    - ./templates/templates.yaml
+    - ./governanca/eventstorming.yaml
+    - ./governanca/organizacional-tmp.yaml
