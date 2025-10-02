@@ -1,0 +1,9 @@
+apiVersion: backstage.io/v1alpha1
+kind: Location
+metadata:
+  name: template-novo-componente
+  description: Coleção de templates
+spec:
+  targets:
+    - ./novo-componente-template/template.alternativa-fetch-template.yaml
+    - ./novo-recurso-template/recurso-template.yaml
