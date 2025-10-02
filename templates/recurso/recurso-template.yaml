@@ -6,7 +6,7 @@ metadata:
   description: Execute para registrar recursos de infraestrutura no catálogo.
 spec:
   type: resource
-  owner: "group:default/governanca-vr"
+  owner: "group:default/gov-vr"
   parameters:
   - title: Identificação e Governança
     required: [nome, descricao, versao, responsavel, buEcossistema]
