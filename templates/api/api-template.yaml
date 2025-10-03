@@ -187,7 +187,7 @@ spec:
         values:
           nome: ${{ parameters.nome }}
           descricao: ${{ parameters.descricao | replace(r/\r?\n/g, '\n\r') }}
-          tipoComponente: ${{ parameters.tipoComponente }}
+          tipoAPI: ${{ parameters.tipoAPI }}
           responsavel: ${{ parameters.responsavel }}
           versao: ${{ parameters.versao }}
           buEcossistema:  ${{ parameters.buEcossistema }}
