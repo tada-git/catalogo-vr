@@ -1,4 +1,4 @@
-site_name: 'Template: Cadastrar Componente'
+site_name: 'Template: Cadastrar API'
 nav:
   - Home: index.md
 plugins:
