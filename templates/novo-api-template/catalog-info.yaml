@@ -1,8 +1,0 @@
-apiVersion: backstage.io/v1alpha1
-kind: Location
-metadata:
-  name: template-novo-componente
-  description: Location que referencia o software template
-spec:
-  targets:
-    - ./template.alternativa-fetch-template.yaml
