@@ -15,7 +15,7 @@ spec:
         title: Nome
         type: string
         description: "Entre apenas com letras maiúsculas/minúsculas, números, hífen, underscore e espaço. Sempre começe com uma letra. Não é aceito cedilha, acentuação ou caracteres especiais."
-        pattern: '^[a-zA-Z][a-zA-Z0-9-\s]*$'
+        pattern: '^[a-zA-Z][a-zA-Z0-9-_\s]*$'
         errorMessage: 
           pattern: 'Não aceita cedilha, acentos ou caracteres especiais. Somente letras maiúsculas/minúsculas, números, hífen, underscore e espaço. Sempre começe com uma letra.'
       descricao:

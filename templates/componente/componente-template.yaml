@@ -19,7 +19,7 @@ spec:
           title: Nome
           type: string
           description: "Se microserviço utilize \"MS Nome Serviço\", se qualquer outro tipo de serviço use \"SVC Nome Serviço\". É permitido KebabCase ou snake-case, espaços viram hífen."
-          pattern: '^[a-zA-Z][a-zA-Z0-9-\s]*$'
+          pattern: '^[a-zA-Z][a-zA-Z0-9-_\s]*$'
           errorMessage: 
             pattern: 'Não aceita cedilha, acentos ou caracteres especiais. Somente letras maiúsculas/minúsculas, números, hífen, underscore e espaço. Sempre começe com uma letra.'
         descricao:
