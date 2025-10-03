@@ -8,7 +8,7 @@ metadata:
   tags:
     ${{ values.tipoExposicaoEModeloAcesso | dump }}
   annotations:
-    backstage.io/source-template: template:default/novo-componente
+    backstage.io/source-template: template:default/nova-api
     gov.vr/identificacao.buEcossistema:  ${{ values.buEcossistema | dump }}
     gov.vr/identificacao.conformidadesRegulamentacoes: ${{ values.conformidadesRegulamentacoes | default('n/a') }}
     gov.vr/observabilidade.capacity: "${{ values.capacity | default('n/a') }}"
