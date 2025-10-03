@@ -1,29 +1,30 @@
 apiVersion: scaffolder.backstage.io/v1beta3
 kind: Template
 metadata:
-  name: novo-componente
-  title: Cadastrar Componente
-  description: Template para criação de componentes do tipo Microserviço, SVC, componentes de Front (web/mobile) e bibliotecas
+  name: nova-api
+  title: Cadastrar API
+  description: Execute para registrar API no catálogo.
 spec:
-  type: service
+  type: API
+  owner: "group:default/gov-vr"
   parameters:
     - title: Identificação
-      required: [tipoComponente, nome, descricao, versao, responsavel]
+      required: [tipoAPI, nome, descricao, versao, responsavel] 
       properties:
-        tipoComponente:
-          title: Tipo do Componente
+        tipoAPI:
+          title: Tipo de API
           type: string
-          enum: [Serviço, Web, Mobile, Biblioteca]
+          enum: [OpenAPI, GraphQL, gRPC]
         nome:
           title: Nome
           type: string
-          description: "Se microserviço utilize \"ms-nome-servico\", se qualquer outro tipo de serviço use \"svc-nome-servico\". Para outros componentes somente letras minúsculas, números ou hífem."
-          pattern: '^[a-z][a-z0-9-]*$'
+          description: "Os nome deve estar no singular e em caso de dois termos separá-los com hífen (ex. gestao-cartao)"
+          pattern: '^[a-zA-Z][a-zA-Z0-9-\s]*$'
           errorMessage: 
-            pattern: 'Use apenas letras minúsculas, números e hífen; comece com letra.'
+            pattern: 'Não aceita cedilha, acentos ou caracteres especiais. Somente letras maiúsculas/minúsculas, números, hífen, underscore e espaço. Sempre começe com uma letra.'
         descricao:
           title: Descrição
-          description: Breve descrição funcional do serviço
+          description: Breve descrição funcional da API
           type: string
           ui:widget: textarea
           ui:options:
@@ -89,7 +90,7 @@ spec:
             ui:options:
               catalogFilter:
                 kind: Component
-                spec.type: [service, library, externo]
+                spec.type: [Serviço, Biblioteca, Externo]
           uniqueItems: true
           errorMessage: "O mesmo item foi selecionado mais de uma vez. Favor selecionar somente um de cada."
         recursosConsumidos:
@@ -111,6 +112,7 @@ spec:
             description: "Selecione as TAGs apropriadas para Modelo de Acesso e Tipo de Exposição."
             items:
               type: string
+            minItems: 1
             ui:field: EntityTagsPicker
             ui:options:
               allowArbitraryValues: false
@@ -139,6 +141,7 @@ spec:
           items:
             type: string
             title: Tecnologia
+          minItems: 1
         javaVersion:
           title: Java Version
           type: string
