@@ -1,7 +1,8 @@
 apiVersion: backstage.io/v1alpha1
 kind: Component
 metadata:
-  name: ${{ values.nome | dump }}
+  name: ${{ values.nome | lower | replace(' ', '-') }}
+  title: ${{ values.nome | dump }}
   # namespace: ${{ values.buEcossistema | dump }} #removido pois o namespace qdo diferente de default aparece na lista e no nome (tela) quebrando a tela - viabilizar customizar a tela no futuro se houver necessidade do uso de namespace
   description: ${{ values.descricao | dump }}
   tags:
@@ -10,10 +11,10 @@ metadata:
     backstage.io/source-template: template:default/novo-componente
     gov.vr/identificacao.buEcossistema:  ${{ values.buEcossistema | dump }}
     gov.vr/identificacao.conformidadesRegulamentacoes: ${{ values.conformidadesRegulamentacoes | default('n/a') }}
-    gov.vr/observabilidade.capacity: ${{ values.capacity | default('n/a') }}
-    gov.vr/observabilidade.sla: ${{ values.sla | default('n/a') }}
+    gov.vr/observabilidade.capacity: "${{ values.capacity | default('n/a') }}"
+    gov.vr/observabilidade.sla: "${{ values.sla | default('n/a') }}"
     gov.vr/tecnologia.tecnologias: ${{ values.tecnologias | dump }}
-    gov.vr/tecnologia.javaVersion: ${{ values.javaVersion | default('n/a') }}
+    gov.vr/tecnologia.javaVersion: "${{ values.javaVersion | default('n/a') }}"
     {% if values.tipoComponente === 'Serviço' %}
     gov.vr/informacao.mensagem: "Pendente de avaliação no EventStorming"
     {% elif values.tipoComponente === 'Web' or values.tipoComponente === 'Mobile' %}
