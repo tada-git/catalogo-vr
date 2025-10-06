@@ -94,7 +94,7 @@ spec:
       componentesConsumidores:
         title: Componentes Consumidores
         type: array
-        description: Serviços, bibliotecas e/ou componentes de Frontend consumidores deste recurso. 
+        description: Backend, frontend ou bibliotecas consumidores deste recurso. 
         items:
           type: string
           title: Componente
@@ -128,7 +128,6 @@ spec:
         title: Centro de Custo
         type: string
         description: O centro de custo do responsável financeiro
-        default: "01234"
         enum: ["01234", "56789", "02025"]
       custo:
         title: Preço estimado
@@ -148,7 +147,7 @@ spec:
         description: A ferramenta principal utilizada para monitorar este recurso
         enum: [Nativo-CloudProvider, Dynatrace, Grafana, Zabbix, Prometheus]        
       urlMonitoramento:
-        title: URL do Monitoramento
+        title: URL da Ferramenta de Monitoramento
         type: string
         description: O endereço da ferramenta de monitoramento para reste recurso. 
         pattern: '^http|https://[a-z0-9A-Z]*$'
@@ -163,7 +162,8 @@ spec:
         ui:field: RepoUrlPicker
         ui:options:
           allowedHosts: [github.com]
-          allowedOwners: [vr-beneficios, vr-gente, vr-mobilidade, vr-shopping, tada-git]
+          #allowedOwners: [vr-beneficios, vr-gente, vr-mobilidade, vr-shopping, tada-git]
+          allowedOrganizations: [vr-beneficios, vr-gente, vr-mobilidade, vr-shopping, GOV-VR]
   steps:
     - id: fetch-skeleton
       name: Fetch Skeleton
