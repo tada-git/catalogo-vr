@@ -14,7 +14,9 @@ metadata:
   annotations:
     backstage.io/source-template: template:default/novo-componente
     gov.vr/identificacao.buEcossistema:  ${{ values.buEcossistema | dump }}
-    gov.vr/identificacao.conformidadesRegulamentacoes: ${{ values.conformidadesRegulamentacoes | default('n/a') }}
+    {% if (values.conformidadesRegulamentacoes | default('n/a') | length) > 0 %}
+    gov.vr/identificacao.conformidadesRegulamentacoes: ${{ values.conformidadesRegulamentacoes }}
+    {% endif %}
     gov.vr/detalhamento-tecnico.natureza: ${{ values.natureza }}
     gov.vr/detalhamento-tecnico.cloudProvider: ${{ values.cloudProvider }}
     gov.vr/custo.produtoRelacionado: ${{ values.produtoRelacionado }}
