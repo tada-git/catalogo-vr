@@ -162,8 +162,7 @@ spec:
         ui:field: RepoUrlPicker
         ui:options:
           allowedHosts: [github.com]
-          allowedOwners: [vr-beneficios, vr-gente, vr-mobilidade, vr-shopping, tada-git, GOV-VR]
-          allowedOrganizations: [vr-beneficios, vr-gente, vr-mobilidade, vr-shopping, GOV-VR]
+          allowedOwners: [vr-beneficios, vr-gente, vr-mobilidade, vr-shopping, tada-git]
   steps:
     - id: fetch-skeleton
       name: Fetch Skeleton
