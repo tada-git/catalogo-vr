@@ -76,7 +76,7 @@ spec:
             ui:field: EntityPicker
             ui:options:
               catalogFilter:
-                kind: Resource
+                kind: Component
           uniqueItems: true
           errorMessage: "O mesmo item foi selecionado mais de uma vez. Favor selecionar somente um de cada."
         tipoExposicaoEModeloAcesso:
@@ -97,7 +97,7 @@ spec:
           title: Monitoramento Principal
           type: string
           description: A ferramenta principal utilizada para monitorar este recurso
-          enum: [Nativo-CloudProvider, Dynatrace, Grafana, Zabbix, Prometheus]        
+          enum: [Nativo-Gateway, Dynatrace, Grafana, Zabbix, Prometheus]        
         urlMonitoramento:
           title: URL da Ferramenta de Monitoramento
           type: string
