@@ -18,8 +18,8 @@ spec:
         nome:
           title: Nome
           type: string
-          description: "Os nome deve estar no singular e em caso de dois termos separá-los com hífen (ex. gestao-cartao)"
-          pattern: '^[a-zA-Z][a-zA-Z0-9-\s]*$'
+          description: "Entre apenas com letras maiúsculas/minúsculas, números, hífen, underscore e espaço. Sempre começe com uma letra. Não é aceito cedilha, acentuação ou caracteres especiais."
+          pattern: '^[a-zA-Z][a-zA-Z0-9-_\s]*$'
           errorMessage: 
             pattern: 'Não aceita cedilha, acentos ou caracteres especiais. Somente letras maiúsculas/minúsculas, números, hífen, underscore e espaço. Sempre começe com uma letra.'
         descricao:
@@ -36,14 +36,14 @@ spec:
             Múltiplas linhas são suportadas.
         versao:
           title: Versão
-          description: Versão inicial do serviço
+          description: Versão inicial da API
           type: string
           default: 1.0.0
           pattern: '^\d+\.\d+\.\d+$'
           errorMessage: "Formato de versão inválido. Use o formato X.Y.Z (exemplo: 1.0.0)."
         responsavel:
           title: Time responsável
-          description: Time responsável pelo serviço
+          description: Time responsável pela API
           type: string
           ui:field: OwnerPicker
           ui:options:
@@ -52,7 +52,7 @@ spec:
         buEcossistema:
           title: BU do Ecossistema
           type: string
-          description: Selecione a BU do ecossistema o qual o componente faz parte
+          description: Selecione a BU do ecossistema o qual a API faz parte
           default: vr-beneficios
           enum: [vr-beneficios, vr-gente, vr-mobilidade, vr-shopping, vr-vexpense]
         conformidadesRegulamentacoes:
@@ -66,40 +66,13 @@ spec:
     - title: Integração e Consumo
       required: [tipoExposicaoEModeloAcesso]
       properties:
-        apisConsumidas:
-          title: APIs Consumidas
+        servicosConsumidos:
+          title: Serviços Consumidos
           type: array
-          description: Listagem de APIs consumidas
+          description: Listagem de serviços consumidos
           items:
             type: string
-            title: API
-            ui:field: EntityPicker
-            ui:options:
-              catalogFilter:
-                kind: API
-          uniqueItems: true
-          errorMessage: "O mesmo item foi selecionado mais de uma vez. Favor selecionar somente um de cada."
-        componentesDependentes:
-          title: Componentes Dependentes
-          type: array
-          description: Listagem de componentes dependentes (inclui bibliotecas)
-          items:
-            type: string
-            title: Componente
-            ui:field: EntityPicker
-            ui:options:
-              catalogFilter:
-                kind: Component
-                spec.type: [Serviço, Biblioteca, Externo]
-          uniqueItems: true
-          errorMessage: "O mesmo item foi selecionado mais de uma vez. Favor selecionar somente um de cada."
-        recursosConsumidos:
-          title: Recursos Consumidos
-          type: array
-          description: Listagem de recursos (infra) consumidos
-          items:
-            type: string
-            title: Recurso
+            title: Serviço
             ui:field: EntityPicker
             ui:options:
               catalogFilter:
@@ -118,66 +91,31 @@ spec:
               allowArbitraryValues: false
               kinds: [Component]
     - title: Observabilidade
+      required: [monitoramento, urlMonitoramento]
       properties:
-        capacity:
-          title: Capacidade Prevista (somente para serviços)
+        monitoramento:
+          title: Monitoramento Principal
           type: string
-          description: A capacidade do serviço em transações por segundo. (TPS)
-          pattern: '^[0-9]+'
-          errorMessage: "Entre somente com um número"
-        sla:
-          title: SLA Previsto (somente para serviços)
+          description: A ferramenta principal utilizada para monitorar este recurso
+          enum: [Nativo-CloudProvider, Dynatrace, Grafana, Zabbix, Prometheus]        
+        urlMonitoramento:
+          title: URL da Ferramenta de Monitoramento
           type: string
-          description: A SLA do serviço, ou seja, o tempo de resposta máximo. (em milisegundos - ms)
-          pattern: '^[0-9]+'
-          errorMessage: "Entre somente com um número"
-    - title: Tecnologia
-      required: [tecnologias]
-      properties:
-        tecnologias:
-          title: Tecnologias
-          type: array
-          description: Listagem de tecnologias utilizadas
-          items:
-            type: string
-            title: Tecnologia
-          minItems: 1
-        javaVersion:
-          title: Java Version
-          type: string
-          description: "Versao do java utilizada pela aplicacao (Ex: 8, 11, 17)"
-          enum: ["11", "17", "21"]
+          description: O endereço da ferramenta de monitoramento para reste recurso. 
+          pattern: '^http|https://[a-z0-9A-Z]*$'
+          errorMessage: "Entre com uma URL HTTP/HTTPS"
+
     - title: Versionamento
       required: [repoUrl]
       properties:
         repoUrl:
-          title: Repository Location
+          title: Registro em repositório
           type: string
+          description: "Utilizado para manter o catalog-info.yaml deste recurso. Obs: o repositório não deve existir. "
           ui:field: RepoUrlPicker
           ui:options:
             allowedHosts: [github.com]
             allowedOwners: [vr-beneficios, vr-gente, vr-mobilidade, vr-shopping, tada-git]
-    - title: Informações para Deploy
-      required: [helmNamespace, helmTimeUnidadeNegocio, helmTimeProduto, helmTimeCentroCusto]
-      properties:
-        helmNamespace:
-          title: Namespace
-          type: string
-          description: Nome do namespace onde o componente sera implantado
-        helmTimeUnidadeNegocio:
-          title: Unidade de negócio
-          type: string
-          description: Nome da unidade de negocio para identificacao atraves das labels
-        helmTimeProduto:
-          title: Produto
-          type: string
-          description: Nome do produto que o servico faz parte
-        helmTimeCentroCusto:
-          title: Centro de Custo
-          type: string
-          description: Identificado do CR utilizado pelo servico
-          default: "01234"
-          enum: ["01234", "56789", "02025"]
   steps:
     - id: fetch-skeleton
       name: Fetch Skeleton
