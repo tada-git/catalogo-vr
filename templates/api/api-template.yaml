@@ -9,7 +9,7 @@ spec:
   owner: "group:default/gov-vr"
   parameters:
     - title: Identificação e Governança
-      required: [tipoAPI, nome, descricao, versao, responsavel] 
+      required: [tipoAPI, nome, descricao, versao, responsavel, urlSwagger] 
       properties:
         tipoAPI:
           title: Tipo de API
@@ -55,6 +55,12 @@ spec:
           description: Selecione a BU do ecossistema o qual a API faz parte
           default: vr-beneficios
           enum: [vr-beneficios, vr-gente, vr-mobilidade, vr-shopping, vr-vexpense]
+        urlSwagger:
+          title: URL do swagger da API
+          type: string
+          description: URL do swagger da API (não do backend) do GitHub
+          pattern: '^https://github.com/[a-z0-9A-Z/]*$'
+          errorMessage: "Entre com uma URL válida do GitHub"
         conformidadesRegulamentacoes:
           title: Conformidade e Regulamentações
           type: array
@@ -105,7 +111,6 @@ spec:
           description: O endereço da ferramenta de monitoramento para reste recurso. 
           pattern: '^http|https://[a-z0-9A-Z]*$'
           errorMessage: "Entre com uma URL HTTP/HTTPS"
-
     - title: Versionamento
       required: [repoUrl]
       properties:
@@ -130,6 +135,7 @@ spec:
           versao: ${{ parameters.versao }}
           responsavel: ${{ parameters.responsavel }}
           buEcossistema: ${{ parameters.buEcossistema }}
+          urlSwagger:  ${{ parameters.urlSwagger }}
           conformidadesRegulamentacoes: ${{ parameters.conformidadesRegulamentacoes | default([]) | join(', ') }}
           servicosExpostos: ${{ parameters.servicosExpostos }}
           tipoExposicaoEModeloAcesso: ${{ parameters.tipoExposicaoEModeloAcesso }}
