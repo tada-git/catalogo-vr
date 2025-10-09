@@ -56,11 +56,10 @@ spec:
           default: vr-beneficios
           enum: [vr-beneficios, vr-gente, vr-mobilidade, vr-shopping, vr-vexpense]
         urlSwagger:
-          title: URL do swagger da API
+          title: Arquivo Swagger (YAML)
           type: string
-          description: URL do swagger da API (não do backend) do GitHub
-          pattern: '^https://github.com/[a-z0-9A-Z/]*$'
-          errorMessage: "Entre com uma URL válida do GitHub"
+          format: data-url
+          ui:widget: file
         conformidadesRegulamentacoes:
           title: Conformidade e Regulamentações
           type: array
