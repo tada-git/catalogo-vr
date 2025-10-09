@@ -14,7 +14,7 @@ spec:
         tipoAPI:
           title: Tipo de API
           type: string
-          enum: [OpenAPI, GraphQL, gRPC]
+          enum: [OpenAPI, GraphQL, gRPC, AsyncAPI]
         nome:
           title: Nome
           type: string
@@ -77,6 +77,7 @@ spec:
             ui:options:
               catalogFilter:
                 kind: Component
+                spec.type: Serviço
           uniqueItems: true
           errorMessage: "O mesmo item foi selecionado mais de uma vez. Favor selecionar somente um de cada."
         tipoExposicaoEModeloAcesso:
@@ -89,7 +90,7 @@ spec:
             ui:field: EntityTagsPicker
             ui:options:
               allowArbitraryValues: false
-              kinds: [Component]
+              kinds: [API]
     - title: Observabilidade
       required: [monitoramento, urlMonitoramento]
       properties:
