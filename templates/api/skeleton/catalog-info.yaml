@@ -21,10 +21,10 @@ metadata:
     gov.vr/observabilidade.urlMonitoramento: ${{ values.urlMonitoramento }}
     gov.vr/informacao.mensagem: "Pendente de avaliação da Célula Sensedia"
 spec:
-  type: ${{ values.tipoComponente | dump }}
+  type: ${{ values.tipoAPI | dump }}
   lifecycle: Novo
   owner: ${{ values.responsavel | dump }}
   version: ${{ values.versao | dump }}
   {% if (values.servicosExpostos | default([]) | length) > 0 %}
-  dependencyOf : ${{ values.servicosExpostos | dump }}
+  apiProvidedBy : ${{ values.servicosExpostos | dump }}
   {% endif %}
