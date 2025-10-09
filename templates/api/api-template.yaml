@@ -142,7 +142,7 @@ spec:
           urlMonitoramento: ${{ parameters.urlMonitoramento }}
     - id: salvar-swagger
       name: Salvar Swagger
-      action: fs:write
+      action: roadiehq:utils:fs:write
       input:
         path: ./swagger.yaml
         content: ${{ parameters.urlSwagger }}
