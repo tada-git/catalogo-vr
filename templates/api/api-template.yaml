@@ -66,10 +66,10 @@ spec:
     - title: Integração e Consumo
       required: [tipoExposicaoEModeloAcesso]
       properties:
-        servicosConsumidos:
-          title: Serviços Consumidos
+        servicosExpostos:
+          title: Serviços Expostos
           type: array
-          description: Listagem de serviços consumidos
+          description: Listagem de serviços de backend expostos pela API
           items:
             type: string
             title: Serviço
@@ -131,7 +131,7 @@ spec:
           responsavel: ${{ parameters.responsavel }}
           buEcossistema: ${{ parameters.buEcossistema }}
           conformidadesRegulamentacoes: ${{ parameters.conformidadesRegulamentacoes | default([]) | join(', ') }}
-          apisConsumidas: ${{ parameters.apisConsumidas }}
+          servicosExpostos: ${{ parameters.servicosExpostos }}
           tipoExposicaoEModeloAcesso: ${{ parameters.tipoExposicaoEModeloAcesso }}
           monitoramento: ${{ parameters.monitoramento }}
           urlMonitoramento: ${{ parameters.urlMonitoramento }}

@@ -12,28 +12,19 @@ metadata:
       title: Dashboard
       icon: dashboard
   annotations:
-    backstage.io/source-template: template:default/novo-componente
+    backstage.io/source-template: template:default/nova-api
     gov.vr/identificacao.buEcossistema:  ${{ values.buEcossistema | dump }}
     {% if (values.conformidadesRegulamentacoes | default('n/a') | length) > 0 %}
     gov.vr/identificacao.conformidadesRegulamentacoes: ${{ values.conformidadesRegulamentacoes }}
     {% endif %}
-    gov.vr/detalhamento-tecnico.natureza: ${{ values.natureza }}
-    gov.vr/detalhamento-tecnico.cloudProvider: ${{ values.cloudProvider }}
-    gov.vr/custo.produtoRelacionado: ${{ values.produtoRelacionado }}
-    gov.vr/custo.centroDeCusto: "${{ values.centroDeCusto }}"
-    gov.vr/custo.custo: "${{ values.custo }}"
-    gov.vr/custo.periodicidade: ${{ values.periodicidade }}
     gov.vr/observabilidade.monitoramento: ${{ values.monitoramento }}
     gov.vr/observabilidade.urlMonitoramento: ${{ values.urlMonitoramento }}
-    gov.vr/informacao.mensagem: "Pendente de avaliação da Célula de Infra"
+    gov.vr/informacao.mensagem: "Pendente de avaliação da Célula Sensedia"
 spec:
   type: ${{ values.tipoComponente | dump }}
   lifecycle: Novo
   owner: ${{ values.responsavel | dump }}
   version: ${{ values.versao | dump }}
-  {% if (values.componentesConsumidores | default([]) | length) > 0 %}
-  dependencyOf : ${{ values.componentesConsumidores | dump }}
-  {% endif %}
-  {% if (values.recursosDependentes | default([]) | length) > 0 %}
-  dependsOn: ${{ values.recursosDependentes | dump }}
+  {% if (values.servicosExpostos | default([]) | length) > 0 %}
+  dependencyOf : ${{ values.servicosExpostos | dump }}
   {% endif %}
