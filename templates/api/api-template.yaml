@@ -8,7 +8,7 @@ spec:
   type: API
   owner: "group:default/gov-vr"
   parameters:
-    - title: Identificação
+    - title: Identificação e Governança
       required: [tipoAPI, nome, descricao, versao, responsavel] 
       properties:
         tipoAPI:
@@ -123,20 +123,17 @@ spec:
       input:
         url: ./skeleton
         values:
+          tipoAPI: ${{ parameters.tipoAPI }}
           nome: ${{ parameters.nome }}
           descricao: ${{ parameters.descricao | replace(r/\r?\n/g, '\n\r') }}
-          tipoAPI: ${{ parameters.tipoAPI }}
-          responsavel: ${{ parameters.responsavel }}
           versao: ${{ parameters.versao }}
-          buEcossistema:  ${{ parameters.buEcossistema }}
+          responsavel: ${{ parameters.responsavel }}
+          buEcossistema: ${{ parameters.buEcossistema }}
           conformidadesRegulamentacoes: ${{ parameters.conformidadesRegulamentacoes | default([]) | join(', ') }}
           apisConsumidas: ${{ parameters.apisConsumidas }}
-          componentesERecursosDependentes: ${{ (parameters.componentesDependentes | default([]) ).concat(parameters.recursosConsumidos | default([]) ) }}
           tipoExposicaoEModeloAcesso: ${{ parameters.tipoExposicaoEModeloAcesso }}
-          capacity: ${{ parameters.capacity }}
-          sla: ${{ parameters.sla }}
-          tecnologias: ${{ parameters.tecnologias | default([]) | join(', ') }}
-          javaVersion: ${{ parameters.javaVersion }}
+          monitoramento: ${{ parameters.monitoramento }}
+          urlMonitoramento: ${{ parameters.urlMonitoramento }}
     - id: publish
       name: Publica o repo no github
       action: publish:github
