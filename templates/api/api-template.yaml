@@ -122,6 +122,11 @@ spec:
             allowedHosts: [github.com]
             allowedOwners: [vr-beneficios, vr-gente, vr-mobilidade, vr-shopping, tada-git]
   steps:
+    - id: fetch-swagger
+      name: Baixar Swagger
+      action: fetch:plain
+      input:
+        url: "https://github.com/swagger-api/swagger-petstore/blob/master/src/main/resources/openapi.yaml"
     - id: fetch-skeleton
       name: Fetch Skeleton
       action: fetch:template
@@ -134,7 +139,7 @@ spec:
           versao: ${{ parameters.versao }}
           responsavel: ${{ parameters.responsavel }}
           buEcossistema: ${{ parameters.buEcossistema }}
-          urlSwagger:  "https://github.com/swagger-api/swagger-petstore/blob/master/src/main/resources/openapi.yaml"
+          urlSwagger: $text: ${{ steps['fetch-swagger'].output.body }}
           conformidadesRegulamentacoes: ${{ parameters.conformidadesRegulamentacoes | default([]) | join(', ') }}
           servicosExpostos: ${{ parameters.servicosExpostos }}
           tipoExposicaoEModeloAcesso: ${{ parameters.tipoExposicaoEModeloAcesso }}
