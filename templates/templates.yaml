@@ -8,4 +8,4 @@ spec:
     - ./componente/componente-template.yaml
     - ./recurso/recurso-template.yaml
     - ./api/api-template.yaml
-    - ./api_temp/template-api-temp.yaml
+    - ./api_temp/api_temp-template.yaml
