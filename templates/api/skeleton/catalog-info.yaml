@@ -28,4 +28,4 @@ spec:
   {% if (values.servicosExpostos | default([]) | length) > 0 %}
   apiProvidedBy : ${{ values.servicosExpostos | dump }}
   {% endif %}
-  definition: $text: ${{ values.urlSwagger | dump }}
+  definition: ${{ values.urlSwagger | dump }}
