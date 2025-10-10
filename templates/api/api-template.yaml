@@ -137,7 +137,7 @@ spec:
           versao: ${{ parameters.versao }}
           responsavel: ${{ parameters.responsavel }}
           buEcossistema: ${{ parameters.buEcossistema }}
-          urlSwagger: $text: ${{ steps['fetch-swagger'].output.body }}
+          urlSwagger: ${{ steps['fetch-swagger'].output.body }}
           conformidadesRegulamentacoes: ${{ parameters.conformidadesRegulamentacoes | default([]) | join(', ') }}
           servicosExpostos: ${{ parameters.servicosExpostos }}
           tipoExposicaoEModeloAcesso: ${{ parameters.tipoExposicaoEModeloAcesso }}
