@@ -58,8 +58,6 @@ spec:
         urlSwagger:
           title: Arquivo Swagger (YAML)
           type: string
-          format: data-url
-          ui:widget: file
         conformidadesRegulamentacoes:
           title: Conformidade e Regulamentações
           type: array
@@ -126,7 +124,7 @@ spec:
       name: Baixar Swagger
       action: fetch:plain
       input:
-        url: "https://github.com/swagger-api/swagger-petstore/blob/master/src/main/resources/openapi.yaml"
+        url: ${{ parameters.urlSwagger }}
     - id: fetch-skeleton
       name: Fetch Skeleton
       action: fetch:template
