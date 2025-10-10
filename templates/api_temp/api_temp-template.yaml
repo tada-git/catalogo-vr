@@ -1,0 +1,47 @@
+
+apiVersion: scaffolder.backstage.io/v1beta3
+kind: Template
+metadata:
+  name: create-api-from-swagger
+  title: Criar API via Swagger
+  description: Cria uma entidade de API no Backstage a partir de um arquivo Swagger
+spec:
+  owner: equipe-ti
+  type: API
+  parameters:
+    - title: Informações da API
+      required:
+        - nome
+      properties:
+        nome:
+          type: string
+          title: Nome da API
+  steps:
+    - id: fetch-swagger
+      name: Baixar Swagger
+      action: fetch:plain
+      input:
+        url: https://raw.githubusercontent.com/swagger-api/swagger-petstore/master/src/main/resources/openapi.yaml
+
+    - id: debug-swagger
+      name: Verificar conteúdo do Swagger
+      action: debug:log
+      input:
+        message: ${{ steps['fetch-swagger'].output.body }}
+
+    - id: create-api
+      name: Criar definição da API
+      action: catalog:register
+      input:
+        catalogInfo:
+          apiVersion: backstage.io/v1alpha1
+          kind: API
+          metadata:
+            name: ${{ parameters.nome }}
+            description: API gerada via Swagger Petstore
+          spec:
+            type: openapi
+            lifecycle: production
+            owner: equipe-ti
+            definition:
+              $text: ${{ steps['fetch-swagger'].output.body }}
