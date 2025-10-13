@@ -132,6 +132,7 @@ spec:
       action: roadiehq:utils:fs:write
       input:
         path: ./swagger.yaml
+        preserveFormatting: true
         content: ${{ parameters.urlSwagger }}
     - id: fetch-skeleton
       name: Fetch Skeleton
