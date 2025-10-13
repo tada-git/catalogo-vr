@@ -1,4 +1,3 @@
-
 apiVersion: scaffolder.backstage.io/v1beta3
 kind: Template
 metadata:
@@ -6,7 +5,7 @@ metadata:
   title: Criar API via Swagger
   description: Cria uma entidade de API no Backstage a partir de um arquivo Swagger
 spec:
-  owner: equipe-ti
+  owner: "group:default/gov-vr"
   type: API
   parameters:
     - title: Informações da API
