@@ -148,7 +148,7 @@ spec:
           description: "Versao do java utilizada pela aplicacao (Ex: 8, 11, 17)"
           enum: ["11", "17", "21"]
     - title: Versionamento
-      required: [repoUrl]
+      required: [repoOrg, repoName]
       properties:
         repoOrg:
           title: Organização
