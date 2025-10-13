@@ -204,7 +204,7 @@ spec:
       action: publish:github
       if: ${{ parameters.repoUrl.includes('github.com') }}
       input:
-        repoUrl: github.com?repo=${{ parameters.repoName }}&owner=${{ parameters.buEcossistema }}
+        repoUrl: "https://github.com?repo=${{ parameters.repoName }}&owner=${{ parameters.buEcossistema }}"
         defaultBranch: main
         gitCommitMessage: 'Initial: Criacao do repositorio e esqueleto do projeto ${{ parameters.nome }}'
         description: 'Initial: Criacao do repositorio e esqueleto do projeto ${{ parameters.nome }}'
