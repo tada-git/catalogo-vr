@@ -154,20 +154,20 @@ spec:
         errorMessage: "Entre com uma URL HTTP/HTTPS"
   - title: Versionamento
     required: [repoOrg, repoName]
-      properties:
-        repoOrg:
-          title: Organização
-          type: string
-          description: Selecione a organização do GitHub owner do componente
-          default: vr-beneficios
-          enum: [vr-beneficios, vr-gente, vr-mobilidade, vr-shopping, vr-vexpense, GOV-VR]
-        repoName:
-          title: Nome do repositório
-          type: string
-          description: Nome do repositório no GitHub a ser criado para este componente
-          pattern: '^[a-zA-Z][a-zA-Z0-9-_]*$'
-          errorMessage: 
-            pattern: 'Entre somente com letras maiúsculas ou minúsculas, números, hífen ou underline'
+    properties:
+      repoOrg:
+        title: Organização
+        type: string
+        description: Selecione a organização do GitHub owner do componente
+        default: vr-beneficios
+        enum: [vr-beneficios, vr-gente, vr-mobilidade, vr-shopping, vr-vexpense, GOV-VR]
+      repoName:
+        title: Nome do repositório
+        type: string
+        description: Nome do repositório no GitHub a ser criado para este componente
+        pattern: '^[a-zA-Z][a-zA-Z0-9-_]*$'
+        errorMessage: 
+          pattern: 'Entre somente com letras maiúsculas ou minúsculas, números, hífen ou underline'
   steps:
     - id: fetch-skeleton
       name: Fetch Skeleton
