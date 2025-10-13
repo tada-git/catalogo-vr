@@ -54,7 +54,7 @@ spec:
           type: string
           description: Selecione a BU do ecossistema o qual o componente faz parte
           default: vr-beneficios
-          enum: [vr-beneficios, vr-gente, vr-mobilidade, vr-shopping, vr-vexpense, GOV-VR]
+          enum: [vr-beneficios, vr-gente, vr-mobilidade, vr-shopping, vr-vexpense]
         conformidadesRegulamentacoes:
           title: Conformidade e Regulamentações
           type: array
@@ -150,13 +150,19 @@ spec:
     - title: Versionamento
       required: [repoUrl]
       properties:
-        repoUrl:
-          title: Repository Location
+        repoOrg:
+          title: Organização
           type: string
-          ui:field: RepoUrlPicker
-          ui:options:
-            allowedHosts: [github.com]
-            allowedOwners: [vr-beneficios, vr-gente, vr-mobilidade, vr-shopping, tada-git]
+          description: Selecione a organização do GitHub owner do componente
+          default: vr-beneficios
+          enum: [vr-beneficios, vr-gente, vr-mobilidade, vr-shopping, vr-vexpense, GOV-VR]
+        repoName:
+          title: Nome do repositório
+          type: string
+          description: Nome do repositório no GitHub a ser criado para este componente
+          pattern: '^[a-zA-Z][a-zA-Z0-9-_]*$'
+          errorMessage: 
+            pattern: 'Entre somente com letras maiúsculas ou minúsculas, números, hífen ou underline'
     - title: Informações para Deploy
       required: [helmNamespace, helmTimeUnidadeNegocio, helmTimeProduto, helmTimeCentroCusto]
       properties:
@@ -204,7 +210,7 @@ spec:
       action: publish:github
       if: ${{ parameters.repoUrl.includes('github.com') }}
       input:
-        repoUrl: "https://github.com?repo=${{ parameters.repoName }}&owner=${{ parameters.buEcossistema }}"
+        repoUrl: "https://github.com?repo=${{ parameters.repoName }}&owner=${{ parameters.repoOrg }}"
         defaultBranch: main
         gitCommitMessage: 'Initial: Criacao do repositorio e esqueleto do projeto ${{ parameters.nome }}'
         description: 'Initial: Criacao do repositorio e esqueleto do projeto ${{ parameters.nome }}'
