@@ -153,16 +153,21 @@ spec:
         pattern: '^http|https://[a-z0-9A-Z]*$'
         errorMessage: "Entre com uma URL HTTP/HTTPS"
   - title: Versionamento
-    required: [repoUrl]
-    properties:
-      repoUrl:
-        title: Registro em repositório
-        type: string
-        description: "Utilizado para manter o catalog-info.yaml deste recurso. Obs: o repositório não deve existir. "
-        ui:field: RepoUrlPicker
-        ui:options:
-          allowedHosts: [github.com]
-          allowedOwners: [vr-beneficios, vr-gente, vr-mobilidade, vr-shopping, tada-git]
+    required: [repoOrg, repoName]
+      properties:
+        repoOrg:
+          title: Organização
+          type: string
+          description: Selecione a organização do GitHub owner do componente
+          default: vr-beneficios
+          enum: [vr-beneficios, vr-gente, vr-mobilidade, vr-shopping, vr-vexpense, GOV-VR]
+        repoName:
+          title: Nome do repositório
+          type: string
+          description: Nome do repositório no GitHub a ser criado para este componente
+          pattern: '^[a-zA-Z][a-zA-Z0-9-_]*$'
+          errorMessage: 
+            pattern: 'Entre somente com letras maiúsculas ou minúsculas, números, hífen ou underline'
   steps:
     - id: fetch-skeleton
       name: Fetch Skeleton
@@ -193,7 +198,7 @@ spec:
       action: publish:github
       if: ${{ parameters.repoUrl.includes('github.com') }}
       input:
-        repoUrl: ${{ parameters.repoUrl }}
+        repoUrl: github.com?repo=${{ parameters.repoName }}&owner=tada-git&org=${{ parameters.repoOrg }}
         defaultBranch: main
         gitCommitMessage: 'Initial: Criacao do repositorio e esqueleto do projeto ${{ parameters.nome }}'
         description: 'Initial: Criacao do repositorio e esqueleto do projeto ${{ parameters.nome }}'
