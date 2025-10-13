@@ -132,7 +132,8 @@ spec:
       action: roadiehq:utils:fs:write
       input:
         path: ./swagger.yaml
-        content: ${{ steps['fetch-swagger'].output.body }}
+        encoding: base64
+        content: ${{ parameters.urlSwagger }}
     - id: fetch-skeleton
       name: Fetch Skeleton
       action: fetch:template
