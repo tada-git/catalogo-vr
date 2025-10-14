@@ -58,8 +58,7 @@ spec:
         urlSwagger:
           title: Arquivo Swagger (YAML)
           type: string
-          format: data-url
-          ui:widget: file
+          ui:field: FileTextUpload
         conformidadesRegulamentacoes:
           title: Conformidade e Regulamentações
           type: array
