@@ -58,7 +58,7 @@ spec:
         urlSwagger:
           title: Arquivo Swagger (YAML)
           type: string
-          ui:field: FileTextUpload
+          ui:widget: file
         conformidadesRegulamentacoes:
           title: Conformidade e Regulamentações
           type: array
@@ -128,10 +128,9 @@ spec:
   steps:
     - id: salvar-swagger
       name: Salvar Swagger
-      action: roadiehq:utils:fs:write
+      action: custom:decodeBase64
       input:
-        path: ./swagger.yaml
-        preserveFormatting: true
+        targetPath: ./swagger.yaml
         content: ${{ parameters.urlSwagger }}
     - id: fetch-skeleton
       name: Fetch Skeleton
