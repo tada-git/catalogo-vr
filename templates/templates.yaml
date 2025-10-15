@@ -7,4 +7,3 @@ spec:
   targets:
     - ./componente/componente-template.yaml
     - ./recurso/recurso-template.yaml
-    - ./api/api-template.yaml
