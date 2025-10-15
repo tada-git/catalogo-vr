@@ -118,6 +118,7 @@ spec:
               allowArbitraryValues: false
               kinds: [Component]
     - title: Observabilidade
+      required: [monitoramento, urlMonitoramento]
       properties:
         capacity:
           title: Capacidade Prevista (somente para serviços)
@@ -131,6 +132,17 @@ spec:
           description: A SLA do serviço, ou seja, o tempo de resposta máximo. (em milisegundos - ms)
           pattern: '^[0-9]+'
           errorMessage: "Entre somente com um número"
+        monitoramento:
+          title: Monitoramento Principal
+          type: string
+          description: A ferramenta principal utilizada para monitorar este recurso
+          enum: [Nativo-CloudProvider, Dynatrace, Grafana, Zabbix, Prometheus]        
+        urlMonitoramento:
+          title: URL da Ferramenta de Monitoramento
+          type: string
+          description: O endereço da ferramenta de monitoramento para reste recurso. 
+          pattern: '^http|https://[a-z0-9A-Z]*$'
+          errorMessage: "Entre com uma URL HTTP/HTTPS"
     - title: Tecnologia
       required: [tecnologias]
       properties:
@@ -205,6 +217,8 @@ spec:
           sla: ${{ parameters.sla }}
           tecnologias: ${{ parameters.tecnologias | default([]) | join(', ') }}
           javaVersion: ${{ parameters.javaVersion }}
+          monitoramento: ${{ parameters.monitoramento }}
+          urlMonitoramento: ${{ parameters.urlMonitoramento }}
     - id: publish
       name: Publica o repo no github
       action: publish:github
