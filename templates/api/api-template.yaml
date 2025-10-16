@@ -135,6 +135,11 @@ spec:
         targetPath: ./swagger.yaml
       output:
         fileName: ${{ steps.salvar-swagger.output.fileName }}
+    - id: mostrarNomeArquivo
+      name: Mostrar nome do arquivo
+      action: debug:log
+      input:
+        message: "O nome do arquivo gerado foi: ${{ steps.salvar-swagger.output.fileName }}"
     - id: fetch-skeleton
       name: Fetch Skeleton
       action: fetch:template
