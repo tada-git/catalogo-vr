@@ -146,7 +146,7 @@ spec:
           descricao: ${{ parameters.descricao | replace(r/\r?\n/g, '\n\r') }}
           versao: ${{ parameters.versao }}
           responsavel: ${{ parameters.responsavel }}
-		  urlSwagger: ${{ steps.decodeSwagger.output.fileName }}
+          urlSwagger: ${{ steps.decodeSwagger.output.fileName }}
           buEcossistema: ${{ parameters.buEcossistema }}
           conformidadesRegulamentacoes: ${{ parameters.conformidadesRegulamentacoes | default([]) | join(', ') }}
           servicosExpostos: ${{ parameters.servicosExpostos }}
