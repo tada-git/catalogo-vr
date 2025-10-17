@@ -127,7 +127,7 @@ spec:
           errorMessage: 
             pattern: 'Entre somente com letras maiúsculas ou minúsculas, números, hífen ou underline'
   steps:
-    - id: salvar-swagger
+    - id: salvarSwagger
       name: Salvar Swagger
       action: custom:decode-swagger
       input:
@@ -135,12 +135,12 @@ spec:
         targetPath: ${{ './' + (parameters.urlSwagger | match(r/name=([^;]+);/, 1)) }}
       output:
         swaggerPath: ${{ input.targetPath }}
-    - id: debug-swagger-path
+    - id: debugSwagger
       name: Debug Swagger Path
       action: debug:log
       input:
         message: ${{ steps.salvar-swagger.outputs.swaggerPath }}
-    - id: fetch-skeleton
+    - id: fetchSkeleton
       name: Fetch Skeleton
       action: fetch:template
       input:
