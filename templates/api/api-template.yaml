@@ -133,11 +133,6 @@ spec:
       input:
         contents: ${{ parameters.urlSwagger }}
         targetPath: ./swagger.yaml
-    - id: mostrarOutput
-      name: Debug output
-      action: debug:log
-      input:
-        text: ${{ toJson(steps.salvar-swagger.output) }}
     - id: mostrarOutput2
       name: Debug output 2
       action: debug:log
