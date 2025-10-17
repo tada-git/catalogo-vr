@@ -133,8 +133,6 @@ spec:
       input:
         contents: ${{ parameters.urlSwagger }}
         targetPath: ./swagger.yaml
-      output:
-        fileName: ${{ steps.salvar-swagger.output.fileName }}
     - id: mostrarOutput
       name: Debug output
       action: debug:log
