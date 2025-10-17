@@ -137,7 +137,13 @@ spec:
       name: Debug output
       action: debug:log
       input:
-        message: ${{ toJson(steps.salvar-swagger.output) }}
+        text: ${{ toJson(steps.salvar-swagger.output) }}
+    - id: mostrarOutput2
+      name: Debug output 2
+      action: debug:log
+      input:
+        message: "Contents of myObject:"
+        object: ${{ steps.salvar-swagger.output }}        
     - id: fetch-skeleton
       name: Fetch Skeleton
       action: fetch:template
