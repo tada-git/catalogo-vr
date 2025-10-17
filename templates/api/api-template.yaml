@@ -131,14 +131,14 @@ spec:
       name: Salvar Swagger
       action: custom:decode-swagger
       input:
-        contents: ${{ parameters.urlSwagger }}
+        contents: ${{ parameters.urlSwagger | replace(r/^data:.*;base64,/, '') }}
         targetPath: ./swagger.yaml
-    - id: mostrarOutput2
-      name: Debug output 2
+    - id: mostrarOutput
+      name: Debug output
       action: debug:log
       input:
         message: "Contents of myObject:"
-        object: ${{ steps.salvar-swagger.output }}        
+        text: ${{ toJson(steps.salvar-swagger.output) }
     - id: fetch-skeleton
       name: Fetch Skeleton
       action: fetch:template
