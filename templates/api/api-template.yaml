@@ -132,9 +132,14 @@ spec:
       action: custom:decode-swagger
       input:
         contents: ${{ parameters.urlSwagger | replace(r/^data:.*;base64,/, '') }}
-        targetPath: ./api-swagger.yaml
+        targetPath: ${{ './' + (parameters.urlSwagger | match(r/name=([^;]+);/, 1)) }}
       output:
         swaggerPath: ${{ input.targetPath }}
+    - id: debug-swagger-path
+      name: Debug Swagger Path
+      action: debug:log
+      input:
+        message: ${{ steps.salvar-swagger.outputs.swaggerPath }}
     - id: fetch-skeleton
       name: Fetch Skeleton
       action: fetch:template
