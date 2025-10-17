@@ -139,7 +139,7 @@ spec:
       name: Debug Swagger Path
       action: debug:log
       input:
-        message: ${{ steps.salvar-swagger.outputs.swaggerPath }}
+        message: ${{ steps.salvarSwagger.outputs.swaggerPath }}
     - id: fetchSkeleton
       name: Fetch Skeleton
       action: fetch:template
@@ -151,7 +151,7 @@ spec:
           descricao: ${{ parameters.descricao | replace(r/\r?\n/g, '\n\r') }}
           versao: ${{ parameters.versao }}
           responsavel: ${{ parameters.responsavel }}
-          urlSwagger: ${{ steps.salvar-swagger.outputs.swaggerPath }}
+          urlSwagger: ${{ steps.['salvarSwagger'].outputs.swaggerPath }}
           buEcossistema: ${{ parameters.buEcossistema }}
           conformidadesRegulamentacoes: ${{ parameters.conformidadesRegulamentacoes | default([]) | join(', ') }}
           servicosExpostos: ${{ parameters.servicosExpostos }}
