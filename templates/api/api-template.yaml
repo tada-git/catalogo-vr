@@ -132,7 +132,9 @@ spec:
       action: custom:decode-swagger
       input:
         contents: ${{ parameters.urlSwagger | replace(r/^data:.*;base64,/, '') }}
-        targetPath: ./swagger.yaml
+        targetPath: ./api-swagger.yaml
+      output:
+        swaggerPath: ${{ input.targetPath }}
     - id: fetch-skeleton
       name: Fetch Skeleton
       action: fetch:template
@@ -144,7 +146,7 @@ spec:
           descricao: ${{ parameters.descricao | replace(r/\r?\n/g, '\n\r') }}
           versao: ${{ parameters.versao }}
           responsavel: ${{ parameters.responsavel }}
-          urlSwagger: swagger.yaml
+          urlSwagger: ${{ steps.salvar-swagger.outputs.swaggerPath }}
           buEcossistema: ${{ parameters.buEcossistema }}
           conformidadesRegulamentacoes: ${{ parameters.conformidadesRegulamentacoes | default([]) | join(', ') }}
           servicosExpostos: ${{ parameters.servicosExpostos }}
