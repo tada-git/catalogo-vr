@@ -139,7 +139,7 @@ spec:
       name: Debug Swagger Path
       action: debug:log
       input:
-        message: ${{ steps.salvarSwagger.outputs.swaggerPath }}
+        message: ${{ steps.['salvarSwagger'].outputs.swaggerPath }}
     - id: fetchSkeleton
       name: Fetch Skeleton
       action: fetch:template
