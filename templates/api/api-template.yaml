@@ -133,11 +133,6 @@ spec:
       input:
         contents: ${{ parameters.urlSwagger | replace(r/^data:.*;base64,/, '') }}
         targetPath: ./swagger.yaml
-    - id: mostrarOutput
-      name: Debug output
-      action: debug:log
-      input:
-        message: ${{ toJson(steps.salvar-swagger.output) }}
     - id: fetch-skeleton
       name: Fetch Skeleton
       action: fetch:template
