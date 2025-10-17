@@ -132,7 +132,7 @@ spec:
       action: custom:decode-swagger
       input:
         contents: ${{ parameters.urlSwagger | replace(r/^data:.*;base64,/, '') }}
-        targetPath: ${{ './' + ${{ parameters.urlSwagger | replace(r/^data:.*;name=([^;]+);.*$/, '$1') }}
+        targetPath: ${{ parameters.urlSwagger | replace(r/^data:.*;name=([^;]+);.*$/, '$1') }}
       output:
         swaggerPath: ${{ input.targetPath }}
     - id: debugSwagger
