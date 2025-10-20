@@ -144,7 +144,7 @@ spec:
           descricao: ${{ parameters.descricao | replace(r/\r?\n/g, '\n\r') }}
           versao: ${{ parameters.versao }}
           responsavel: ${{ parameters.responsavel }}
-          urlSwagger: ${{ '$text: ./' + (parameters.urlSwagger | replace(r/^data:.*;name=([^;]+);.*$/, '$1')) }}
+          urlSwagger: "${{ '$text: ./' + (parameters.urlSwagger | replace(r/^data:.*;name=([^;]+);.*$/, '$1') ) }}"
           buEcossistema: ${{ parameters.buEcossistema }}
           conformidadesRegulamentacoes: ${{ parameters.conformidadesRegulamentacoes | default([]) | join(', ') }}
           servicosExpostos: ${{ parameters.servicosExpostos }}
