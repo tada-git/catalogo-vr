@@ -14,7 +14,7 @@ spec:
         tipoAPI:
           title: Tipo de API
           type: string
-          enum: [OpenAPI, GraphQL, gRPC, AsyncAPI]
+          enum: [openapi, OpenAPI, GraphQL, gRPC, AsyncAPI]
         nome:
           title: Nome
           type: string
