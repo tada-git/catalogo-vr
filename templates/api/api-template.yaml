@@ -60,6 +60,7 @@ spec:
           type: string
           format: data-url
           ui:widget: file
+          ui:hidden: true
         conformidadesRegulamentacoes:
           title: Conformidade e Regulamentações
           type: array
