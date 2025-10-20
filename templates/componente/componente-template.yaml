@@ -5,7 +5,7 @@ metadata:
   title: Cadastrar Componente
   description: Execute para registrar componentes do tipo Microserviço, SVC, componentes de Front (web/mobile) e bibliotecas no catálogo.
 spec:
-  type: component
+  type: service
   owner: "group:default/gov-vr"
   parameters:
     - title: Identificação
