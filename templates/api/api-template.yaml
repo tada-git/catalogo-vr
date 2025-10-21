@@ -14,7 +14,20 @@ spec:
         tipoAPI:
           title: Tipo de API
           type: string
-          enum: [openapi, OpenAPI, GraphQL, gRPC, AsyncAPI]
+          enum: [openapi, graphql, grpc, asyncapi]
+        uiSchema:
+          tipoAPI:
+            'ui:widget': select
+            'ui:options':
+              enumOptions:
+                - label: OpenAPI (REST)
+                  value: openapi
+                - label: GraphQL
+                  value: graphql
+                - label: gRPC
+                  value: grpc
+                - label: AsyncAPI (Event-driven)
+                  value: asyncapi
         nome:
           title: Nome
           type: string
