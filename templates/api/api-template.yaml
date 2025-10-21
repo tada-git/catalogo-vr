@@ -69,8 +69,12 @@ spec:
           type: string
           format: data-url
           ui:widget: file
+        swaggerFileName:
+          title: Nome do Arquivo Swagger
+          type: string
+          default: "${{ '$text: ./' + (parameters.urlSwagger | replace(r/^data:.*;name=([^;]+);.*$/, '$1') ) }}"
           ui:options:
-            hideInReview: true  # Oculta na tela de revisão
+            hideInForm: true
         conformidadesRegulamentacoes:
           title: Conformidade e Regulamentações
           type: array
@@ -155,7 +159,7 @@ spec:
           descricao: ${{ parameters.descricao | replace(r/\r?\n/g, '\n\r') }}
           versao: ${{ parameters.versao }}
           responsavel: ${{ parameters.responsavel }}
-          urlSwagger: "${{ '$text: ./' + (parameters.urlSwagger | replace(r/^data:.*;name=([^;]+);.*$/, '$1') ) }}"
+          urlSwagger: ${{ parameters.swaggerFileName }}
           buEcossistema: ${{ parameters.buEcossistema }}
           conformidadesRegulamentacoes: ${{ parameters.conformidadesRegulamentacoes | default([]) | join(', ') }}
           servicosExpostos: ${{ parameters.servicosExpostos }}
