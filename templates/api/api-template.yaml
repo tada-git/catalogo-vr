@@ -138,7 +138,7 @@ spec:
   steps:
     - id: salvarSwagger
       name: Salvar Swagger
-      action: custom:decode-swagger
+      action: custom:decode-file
       input:
         contents: ${{ parameters.urlSwagger | replace(r/^data:.*;base64,/, '') }}
         targetPath: ${{ parameters.urlSwagger | replace(r/^data:.*;name=([^;]+);.*$/, '$1') }}  
