@@ -153,7 +153,7 @@ spec:
         pattern: '^http|https://[a-z0-9A-Z]*$'
         errorMessage: "Entre com uma URL HTTP/HTTPS"
   - title: Versionamento
-    required: [repoOrg, repoName]
+    required: [repoOrg]
     properties:
       repoOrg:
         title: Organização
@@ -161,13 +161,13 @@ spec:
         description: Selecione a organização do GitHub owner do componente
         default: vr-beneficios
         enum: [vr-beneficios, vr-gente, vr-mobilidade, vr-shopping, vr-vexpense, GOV-VR]
-      repoName:
-        title: Nome do repositório
-        type: string
-        description: Nome do repositório no GitHub a ser criado para este componente
-        pattern: '^[a-zA-Z][a-zA-Z0-9-_]*$'
-        errorMessage: 
-          pattern: 'Entre somente com letras maiúsculas ou minúsculas, números, hífen ou underline'
+      #repoName:
+      #  title: Nome do repositório
+      #  type: string
+      #  description: Nome do repositório no GitHub a ser criado para este componente
+      #  pattern: '^[a-zA-Z][a-zA-Z0-9-_]*$'
+      #  errorMessage: 
+      #    pattern: 'Entre somente com letras maiúsculas ou minúsculas, números, hífen ou underline'
   steps:
     - id: fetch-skeleton
       name: Fetch Skeleton
@@ -198,7 +198,7 @@ spec:
       action: publish:github
       if: ${{ parameters.repoUrl.includes('github.com') }}
       input:
-        repoUrl: github.com?repo=${{ parameters.repoName }}&owner=${{ parameters.repoOrg }}
+        repoUrl: github.com?repo=${{ parameters.nome | lower | replace(' ', '-') }}&owner=${{ parameters.repoOrg }}
         defaultBranch: main
         gitCommitMessage: 'Initial: Criacao do repositorio e esqueleto do projeto ${{ parameters.nome }}'
         description: 'Initial: Criacao do repositorio e esqueleto do projeto ${{ parameters.nome }}'
