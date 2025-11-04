@@ -1,0 +1,7 @@
+apiVersion: backstage.io/v1alpha1
+kind: Group
+metadata:
+  name: gov-vr
+  title: GOV.VR
+spec:
+  type: team
