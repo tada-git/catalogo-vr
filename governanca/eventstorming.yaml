@@ -7,7 +7,7 @@ metadata:
   - dominios
   title: Comum
 spec:
-  owner: group:default/governanca-vr
+  owner: group:default/gov-vr
 ---
 apiVersion: backstage.io/v1alpha1
 kind: Domain
@@ -18,7 +18,7 @@ metadata:
   - dominios
   title: Emissor
 spec:
-  owner: group:default/governanca-vr
+  owner: group:default/gov-vr
 ---
 apiVersion: backstage.io/v1alpha1
 kind: Domain
@@ -29,7 +29,7 @@ metadata:
   - dominios
   title: Adquirente
 spec:
-  owner: group:default/governanca-vr
+  owner: group:default/gov-vr
 ---
 apiVersion: backstage.io/v1alpha1
 kind: System
@@ -40,7 +40,7 @@ metadata:
   tags:
     - comum
 spec:
-  owner: group:default/governanca-vr
+  owner: group:default/gov-vr
   domain: domain:default/comum
   type: Subdomínio
 ---
@@ -53,7 +53,7 @@ metadata:
   tags:
     - emissor
 spec:
-  owner: group:default/governanca-vr
+  owner: group:default/gov-vr
   domain: domain:default/emissor
   type: Subdomínio
 ---
@@ -66,7 +66,7 @@ metadata:
   tags:
     - adquirente
 spec:
-  owner: group:default/governanca-vr
+  owner: group:default/gov-vr
   domain: domain:default/adquirente
   type: Subdomínio
 ---
@@ -79,7 +79,7 @@ metadata:
   tags:
     - comum
 spec:
-  owner: group:default/governanca-vr
+  owner: group:default/gov-vr
   domain: domain:default/comum
   type: Subdomínio
 ---
@@ -92,7 +92,7 @@ metadata:
   tags:
     - comum
 spec:
-  owner: group:default/governanca-vr
+  owner: group:default/gov-vr
   domain: domain:default/comum
   type: Subdomínio
 ---
@@ -105,7 +105,7 @@ metadata:
   tags:
     - emissor
 spec:
-  owner: group:default/governanca-vr
+  owner: group:default/gov-vr
   domain: domain:default/emissor
   type: Subdomínio
 ---
@@ -118,7 +118,7 @@ metadata:
   tags:
     - emissor
 spec:
-  owner: group:default/governanca-vr
+  owner: group:default/gov-vr
   domain: domain:default/emissor
   type: Subdomínio
 ---
@@ -131,7 +131,7 @@ metadata:
   tags:
     - adquirente
 spec:
-  owner: group:default/governanca-vr
+  owner: group:default/gov-vr
   domain: domain:default/adquirente
   type: Subdomínio
 ---
@@ -144,7 +144,7 @@ metadata:
   tags:
     - adquirente
 spec:
-  owner: group:default/governanca-vr
+  owner: group:default/gov-vr
   domain: domain:default/adquirente
   type: Subdomínio
 #---
@@ -157,7 +157,7 @@ spec:
 #  - comum:subdominios
 #  title: Comunicação
 #spec:
-#  owner: group:default/governanca-vr
+#  owner: group:default/gov-vr
 #  parent:
 #    kind: Domain
 #    name: comum
@@ -171,7 +171,7 @@ spec:
 #  - comum:subdominios
 #  title: Soluções Financeiras
 #spec:
-#  owner: group:default/governanca-vr
+#  owner: group:default/gov-vr
 #  parent:
 #    kind: Domain
 #    name: comum
@@ -185,7 +185,7 @@ spec:
 #  - comum:subdominios
 #  title: Segurança
 #spec:
-#  owner: group:default/governanca-vr
+#  owner: group:default/gov-vr
 #  parent:
 #    kind: Domain
 #    name: comum
@@ -199,7 +199,7 @@ spec:
 #  - comum:subdominios
 #  title: Renumeração de Canais
 #spec:
-#  owner: group:default/governanca-vr
+#  owner: group:default/gov-vr
 #  parent:
 #    kind: Domain
 #    name: comum
@@ -213,7 +213,7 @@ spec:
 #  - comum:subdominios
 #  title: Dados Básicos
 #spec:
-#  owner: group:default/governanca-vr
+#  owner: group:default/gov-vr
 #  parent:
 #    kind: Domain
 #    name: comum
@@ -227,7 +227,7 @@ spec:
 #  - emissor:subdominios
 #  title: Venda RH
 #spec:
-#  owner: group:default/governanca-vr
+#  owner: group:default/gov-vr
 #  parent:
 #    kind: Domain
 #    name: emissor
@@ -241,7 +241,7 @@ spec:
 #  - emissor:subdominios
 #  title: Operação RH
 #spec:
-#  owner: group:default/governanca-vr
+#  owner: group:default/gov-vr
 #  parent:
 #    kind: Domain
 #    name: emissor
@@ -255,7 +255,7 @@ spec:
 #  - emissor:subdominios
 #  title: Cliente RH
 #spec:
-#  owner: group:default/governanca-vr
+#  owner: group:default/gov-vr
 #  parent:
 #    kind: Domain
 #    name: emissor
@@ -269,7 +269,7 @@ spec:
 #  - emissor:subdominios
 #  title: Logística Cartões
 #spec:
-#  owner: group:default/governanca-vr
+#  owner: group:default/gov-vr
 #  parent:
 #    kind: Domain
 #    name: emissor
@@ -283,7 +283,7 @@ spec:
 #  - adquirente:subdominios
 #  title: Venda EC
 #spec:
-#  owner: group:default/governanca-vr
+#  owner: group:default/gov-vr
 #  parent:
 #    kind: Domain
 #    name: adquirente
@@ -297,7 +297,7 @@ spec:
 #  - adquirente:subdominios
 #  title: Cliente EC
 #spec:
-#  owner: group:default/governanca-vr
+#  owner: group:default/gov-vr
 #  parent:
 #    kind: Domain
 #    name: adquirente
@@ -311,7 +311,7 @@ spec:
 #  - adquirente:subdominios
 #  title: Serviços EC
 #spec:
-#  owner: group:default/governanca-vr
+#  owner: group:default/gov-vr
 #  parent:
 #    kind: Domain
 #    name: adquirente
@@ -325,7 +325,7 @@ spec:
 #  - adquirente:subdominios
 #  title: Operação do EC
 #spec:
-#  owner: group:default/governanca-vr
+#  owner: group:default/gov-vr
 #  parent:
 #    kind: Domain
 #    name: adquirente
