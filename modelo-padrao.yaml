@@ -7,4 +7,5 @@ spec:
   targets:
     - ./templates/templates.yaml
     - ./governanca/eventstorming.yaml
+    - ./governanca/aplicacoes.yaml
     #- ./governanca/organizacional-tmp.yaml
