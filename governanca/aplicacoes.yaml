@@ -10,3 +10,68 @@ spec:
   owner: group:default/gov-vr
   domain: domain:default/externo
   type: Aplicação
+---
+apiVersion: backstage.io/v1alpha1
+kind: System
+metadata:
+  name: sensedia
+  title: Sensedia API Mamagement (ext)
+  description: "Sistema utilizado para as APIs em geral."
+  tags:
+    - sistema
+spec:
+  owner: group:default/gov-vr
+  domain: domain:default/externo
+  type: Aplicação
+---
+apiVersion: backstage.io/v1alpha1
+kind: System
+metadata:
+  name: aws
+  title: AWS (ext)
+  description: "Cloud Provider - sistema externo"
+  tags:
+    - sistema
+spec:
+  owner: group:default/gov-vr
+  domain: domain:default/externo
+  type: Recurso
+---
+apiVersion: backstage.io/v1alpha1
+kind: System
+metadata:
+  name: gcp
+  title: GCP (ext)
+  description: "Cloud Provider - sistema externo"
+  tags:
+    - sistema
+spec:
+  owner: group:default/gov-vr
+  domain: domain:default/externo
+  type: Recurso
+---
+apiVersion: backstage.io/v1alpha1
+kind: System
+metadata:
+  name: azure
+  title: Azure (ext)
+  description: "Cloud Provider - sistema externo"
+  tags:
+    - sistema
+spec:
+  owner: group:default/gov-vr
+  domain: domain:default/externo
+  type: Recurso
+---
+apiVersion: backstage.io/v1alpha1
+kind: System
+metadata:
+  name: on-premisse
+  title: On-Premisse
+  description: "Cloud Provider - sistema interno"
+  tags:
+    - sistema
+spec:
+  owner: group:default/gov-vr
+  domain: domain:default/externo
+  type: Recurso
