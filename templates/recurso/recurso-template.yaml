@@ -15,7 +15,7 @@ spec:
         title: Nome
         type: string
         description: "Entre apenas com letras maiúsculas/minúsculas, números, hífen, underscore e espaço. Sempre começe com uma letra. Não é aceito cedilha, acentuação ou caracteres especiais."
-        pattern: '^[a-zA-Z][a-zA-Z0-9-_\s]*$'
+        pattern: '^(?!\s)[a-zA-Z][a-zA-Z0-9-_ ]*(?<!\s)$'
         errorMessage: 
           pattern: 'Não aceita cedilha, acentos ou caracteres especiais. Somente letras maiúsculas/minúsculas, números, hífen, underscore e espaço. Sempre começe com uma letra.'
       descricao:
@@ -175,7 +175,7 @@ spec:
       input:
         url: ./skeleton
         values:
-          nome: ${{ parameters.nome }}
+          nome: ${{ trim parameters.nome }}
           descricao: ${{ parameters.descricao | replace(r/\r?\n/g, '\n\r') }}
           tipoComponente: ${{ parameters.tipoComponente }}
           responsavel: ${{ parameters.responsavel }}
@@ -198,10 +198,10 @@ spec:
       action: publish:github
       if: ${{ parameters.repoUrl.includes('github.com') }}
       input:
-        repoUrl: github.com?repo=${{ parameters.nome | lower | replace(' ', '-') }}&owner=${{ parameters.repoOrg }}
+        repoUrl: github.com?repo=${{ trim parameters.nome | lower | replace(' ', '-') }}&owner=${{ parameters.repoOrg }}
         defaultBranch: main
-        gitCommitMessage: 'Initial: Criacao do repositorio e esqueleto do projeto ${{ parameters.nome }}'
-        description: 'Initial: Criacao do repositorio e esqueleto do projeto ${{ parameters.nome }}'
+        gitCommitMessage: 'Initial: Criacao do repositorio e esqueleto do projeto ${{ trim parameters.nome }}'
+        description: 'Initial: Criacao do repositorio e esqueleto do projeto ${{ trim parameters.nome }}'
     - id: register
       name: Register
       action: catalog:register
