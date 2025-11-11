@@ -1,8 +1,8 @@
 apiVersion: backstage.io/v1alpha1
 kind: System
 metadata:
-  name: salexforce-ext
-  title: Salexforce (ext)
+  name: salesforce-ext
+  title: Salesforce (ext)
   description: Subdomínio
   tags:
     - sistema
