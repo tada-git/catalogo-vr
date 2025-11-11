@@ -3,7 +3,7 @@ kind: System
 metadata:
   name: salesforce-ext
   title: Salesforce (ext)
-  description: "Sistema, aplicação externa, sempre é cadastrado como system. Outras ficam:\n\r- MS: subdominio do eventstorming\n\r- Demais: nome da aplicação"
+  description: "Como fica o cadastro de sistema/aplicação ou subdomínio:\n\r- MS: subdominio do eventstorming\n\r- Demais (inclui aplicações externas, web/mobile, biblioteca): nome da aplicação (não obrigatório se for muito reutilizável)"
   tags:
     - sistema
 spec:
