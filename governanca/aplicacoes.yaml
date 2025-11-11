@@ -1,6 +1,32 @@
 apiVersion: backstage.io/v1alpha1
 kind: System
 metadata:
+  name: spe
+  title: SuperApp do Trabalhador
+  description: "SuperApp do Trabalhador (interno)"
+  tags:
+    - sistema
+spec:
+  owner: group:default/gov-vr
+  domain: domain:default/interno
+  type: Aplicação
+---
+apiVersion: backstage.io/v1alpha1
+kind: System
+metadata:
+  name: spe
+  title: SPE
+  description: "SuperPortal Empregador (interno)"
+  tags:
+    - sistema
+spec:
+  owner: group:default/gov-vr
+  domain: domain:default/interno
+  type: Aplicação
+---
+apiVersion: backstage.io/v1alpha1
+kind: System
+metadata:
   name: salesforce-ext
   title: Salesforce (ext)
   description: "Como fica o cadastro de sistema/aplicação ou subdomínio:\n\r- MS: subdominio do eventstorming\n\r- Demais (inclui aplicações externas, web/mobile, biblioteca): nome da aplicação (não obrigatório se for muito reutilizável)"
@@ -73,5 +99,5 @@ metadata:
     - sistema
 spec:
   owner: group:default/gov-vr
-  domain: domain:default/externo
+  domain: domain:default/interno
   type: Recurso
