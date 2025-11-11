@@ -1,6 +1,17 @@
 apiVersion: backstage.io/v1alpha1
 kind: Domain
 metadata:
+  description: Domínio EXTERNO
+  name: externo
+  tags:
+  - dominios
+  title: Externo
+spec:
+  owner: group:default/gov-vr
+---
+apiVersion: backstage.io/v1alpha1
+kind: Domain
+metadata:
   description: Domínio Base
   name: comum
   tags:
