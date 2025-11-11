@@ -1,0 +1,8 @@
+apiVersion: backstage.io/v1alpha1
+kind: Group
+metadata:
+  description: Grupo raiz do ecossistema VR
+  name: ecossistema-vr
+  title: Ecossistema VR
+spec:
+  type: organization
