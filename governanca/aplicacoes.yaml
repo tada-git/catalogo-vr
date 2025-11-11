@@ -1,7 +1,7 @@
 apiVersion: backstage.io/v1alpha1
 kind: System
 metadata:
-  name: spe
+  name: superapp
   title: SuperApp do Trabalhador
   description: "SuperApp do Trabalhador (interno)"
   tags:
