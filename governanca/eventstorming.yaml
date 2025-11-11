@@ -1,6 +1,17 @@
 apiVersion: backstage.io/v1alpha1
 kind: Domain
 metadata:
+  description: Domínio INTERNO (usado para web/mobile/bibliotecas)
+  name: interno
+  tags:
+  - dominios
+  title: Interno
+spec:
+  owner: group:default/gov-vr
+---
+apiVersion: backstage.io/v1alpha1
+kind: Domain
+metadata:
   description: Domínio EXTERNO
   name: externo
   tags:
