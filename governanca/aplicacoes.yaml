@@ -8,4 +8,5 @@ metadata:
     - sistema
 spec:
   owner: group:default/gov-vr
+  domain: domain:default/externo
   type: Aplicação
