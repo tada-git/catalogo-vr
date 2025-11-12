@@ -175,7 +175,7 @@ spec:
       input:
         url: ./skeleton
         values:
-          nome: ${{ trim parameters.nome }}
+          nome: ${{ parameters.nome }}
           descricao: ${{ parameters.descricao | replace(r/\r?\n/g, '\n\r') }}
           tipoComponente: ${{ parameters.tipoComponente }}
           responsavel: ${{ parameters.responsavel }}
@@ -198,10 +198,10 @@ spec:
       action: publish:github
       if: ${{ parameters.repoUrl.includes('github.com') }}
       input:
-        repoUrl: github.com?repo=${{ trim parameters.nome | lower | replace(' ', '-') }}&owner=${{ parameters.repoOrg }}
+        repoUrl: github.com?repo=${{ parameters.nome | lower | replace(' ', '-') }}&owner=${{ parameters.repoOrg }}
         defaultBranch: main
-        gitCommitMessage: 'Initial: Criacao do repositorio e esqueleto do projeto ${{ trim parameters.nome }}'
-        description: 'Initial: Criacao do repositorio e esqueleto do projeto ${{ trim parameters.nome }}'
+        gitCommitMessage: 'Initial: Criacao do repositorio e esqueleto do projeto ${{ parameters.nome }}'
+        description: 'Initial: Criacao do repositorio e esqueleto do projeto ${{ parameters.nome }}'
     - id: register
       name: Register
       action: catalog:register
