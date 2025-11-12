@@ -14,9 +14,9 @@ metadata:
   annotations:
     backstage.io/source-template: template:default/nova-api
     gov.vr/identificacao.buEcossistema:  ${{ values.buEcossistema | dump }}
-    {% if (values.conformidadesRegulamentacoes | default('n/a') | length) > 0 %}
+    {% if (values.conformidadesRegulamentacoes | default('n/a') | length) > 0 -%}
     gov.vr/identificacao.conformidadesRegulamentacoes: ${{ values.conformidadesRegulamentacoes }}
-    {% endif %}
+    {%- endif %}
     gov.vr/observabilidade.monitoramento: ${{ values.monitoramento }}
     gov.vr/observabilidade.urlMonitoramento: ${{ values.urlMonitoramento }}
     gov.vr/informacao.mensagem: "Pendente de avaliação da Célula Sensedia"
@@ -25,8 +25,8 @@ spec:
   lifecycle: Novo
   owner: ${{ values.responsavel | dump }}
   version: ${{ values.versao | dump }}
-  {% if (values.servicosExpostos | default([]) | length) > 0 %}
-  apiProvidedBy : ${{ values.servicosExpostos | dump }}
-  {% endif %}
+  {% if (values.servicosExpostos | default([]) | length) > 0 -%}
+  apiProvidedBy: ${{ values.servicosExpostos | dump }}
+  {%- endif %}
   definition: 
     ${{ values.urlSwagger | default('') }}
