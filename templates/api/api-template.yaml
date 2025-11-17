@@ -28,9 +28,9 @@ spec:
           title: Nome
           type: string
           description: "Entre apenas com letras maiúsculas/minúsculas, números, hífen, underscore e espaço. Sempre começe com uma letra. Não é aceito cedilha, acentuação ou caracteres especiais."
-          pattern: '^[a-zA-Z][a-zA-Z0-9-_\s]*$'
+          pattern: '^(?!\s)[a-zA-Z][a-zA-Z0-9-_ ]*(?<!\s)$'
           errorMessage: 
-            pattern: 'Não aceita cedilha, acentos ou caracteres especiais. Somente letras maiúsculas/minúsculas, números, hífen, underscore e espaço. Sempre começe com uma letra.'
+            pattern: 'Não aceita cedilha, acentos, caracteres especiais e espaços no final do nome. Somente letras maiúsculas/minúsculas, números, hífen, underscore e espaço. Sempre começe com uma letra.'
         descricao:
           title: Descrição
           description: Breve descrição funcional da API
