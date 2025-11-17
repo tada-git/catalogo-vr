@@ -152,15 +152,15 @@ spec:
         description: O endereço da ferramenta de monitoramento para reste recurso. 
         pattern: '^http|https://[a-z0-9A-Z]*$'
         errorMessage: "Entre com uma URL HTTP/HTTPS"
-  - title: Versionamento
-    required: [repoOrg]
-    properties:
-      repoOrg:
-        title: Organização
-        type: string
-        description: Selecione a organização do GitHub owner do componente
-        default: vr-beneficios
-        enum: [vr-beneficios, vr-gente, vr-mobilidade, vr-shopping, vr-vexpense, GOV-VR]
+  #- title: Versionamento
+  #  required: [repoOrg]
+  #  properties:
+  #    repoOrg:
+  #      title: Organização
+  #      type: string
+  #      description: Selecione a organização do GitHub owner do componente
+#        default: vr-beneficios
+#        enum: [vr-beneficios, vr-gente, vr-mobilidade, vr-shopping, vr-vexpense, GOV-VR]
       #repoName:
       #  title: Nome do repositório
       #  type: string
